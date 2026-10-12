@@ -59,11 +59,16 @@
                             .service{padding:22px 13px}.service-icon{width:60px;height:60px}.social-bullets{grid-template-columns:1fr}.quote-art{padding:25px}
                             .quote-art .brush{font-size:1.45rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
-header .brand-logo,
-header img {
-  display: block !important;
-  width: 50px !important;
-  height: 80px !important;
-  object-fit: contain !important;
-  object-position: left center !important;
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  display: block;
+  width: 220px;
+  height: 80px;
+  object-fit: contain;
+  object-position: left center;
 }
