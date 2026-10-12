@@ -62,7 +62,7 @@
 header .brand-logo,
 header img {
   display: block !important;
-  width: 220px !important;
+  width: 50px !important;
   height: 80px !important;
   object-fit: contain !important;
   object-position: left center !important;
