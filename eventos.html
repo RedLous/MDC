@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Galeria de Fotografias</title>
+
+  <style>
+    /* Secção principal */
+    .gallery-section {
+      max-width: 1160px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      color: #38313c;
+    }
+
+    .gallery-heading {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .gallery-heading h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .gallery-heading p {
+      color: #777;
+      line-height: 1.6;
+    }
+
+    /* Lista de fotografias */
+    .gallery-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* Cada linha: fotografia + texto */
+    .gallery-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 28px;
+      padding: 18px;
+      border-radius: 14px;
+      background: #faf7fb;
+      box-sizing: border-box;
+    }
+
+    /* Fotografia */
+    .gallery-card img {
+      width: 100%;
+      height: 280px;
+      display: block;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Texto ao lado da fotografia */
+    .gallery-card-content {
+      padding: 10px;
+    }
+
+    .gallery-card-content h3 {
+      font-size: 23px;
+      margin: 0 0 14px;
+      color: #79558b;
+    }
+
+    .gallery-card-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0;
+      color: #5f5863;
+    }
+
+    /* Inverter a posição em linhas alternadas */
+    .gallery-card:nth-child(even) img {
+      order: 2;
+    }
+
+    .gallery-card:nth-child(even) .gallery-card-content {
+      order: 1;
+    }
+
+    /* Adaptação para telemóveis */
+    @media (max-width: 700px) {
+      .gallery-section {
+        padding: 25px 16px;
+      }
+
+      .gallery-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 12px;
+      }
+
+      .gallery-card img {
+        height: 230px;
+      }
+
+      .gallery-card:nth-child(even) img,
+      .gallery-card:nth-child(even) .gallery-card-content {
+        order: initial;
+      }
+
+      .gallery-card-content {
+        padding: 8px;
+      }
+
+      .gallery-card-content h3 {
+        font-size: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="gallery-section">
+
+    <div class="gallery-heading">
+      <h2>Os nossos momentos</h2>
+      <p>Descobre as experiências e atividades que temos para ti.</p>
+    </div>
+
+    <div class="gallery-list">
+
+      <!-- Fotografia 1 -->
+      <article class="gallery-card">
+        <img src="images/photo1.jpg" alt="Festa de aniversário">
+
+        <div class="gallery-card-content">
+          <h3>Festas de aniversário</h3>
+          <p>
+            Celebramos dias especiais com atividades criativas,
+            decoração colorida e momentos divertidos, preparados
+            para tornar cada aniversário inesquecível.
+          </p>
+        </div>
+      </article>
+
+      <!-- Fotografia 2 -->
+      <article class="gallery-card">
+        <img src="images/photo2.jpg" alt="Atividades criativas">
+
+        <div class="gallery-card-content">
+          <h3>Ateliês criativos</h3>
+          <p>
+            Damos asas à imaginação através de experiências
+            artísticas, trabalhos manuais e atividades onde
+            cada participante pode explorar a sua criatividade.
+          </p>
+        </div>
+      </article>
+
+      <!-- Fotografia 3 -->
+      <article class="gallery-card">
+        <img src="images/photo3.jpg" alt="Decoração de festa">
+
+        <div class="gallery-card-content">
+          <h3>Decoração personalizada</h3>
+          <p>
+            Criamos ambientes cheios de cor e personalidade,
+            com detalhes pensados para combinar com o tema
+            e o estilo de cada celebração.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+</body>
+</html>
+
+</body>
+</html>
