@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Elementos gráficos — Galeria · Magia das Cores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --blue:#64b6bf;--green:#62a65f;--cream:#f2e0d5;--pink:#f5b1d0;--purple:#64b6bf;--ink:#29345f;--paper:#fffdfb;--radius:18px;--shadow:0 20px 60px rgba(40,20,60,0.12);
+        }
+        *{box-sizing:border-box}
+        body{margin:0;font-family:Nunito,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+        .site-header{padding:18px 20px;border-bottom:1px solid #f0e8f4;background:var(--white)}
+        .container{width:min(1100px,calc(100% - 40px));margin:0 auto}
+        .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-family:'Baloo 2',cursive}
+        h1{font-family:'Baloo 2',cursive;margin:8px 0 6px}
+        .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:22px 0}
+        .tile{position:relative;overflow:hidden;border-radius:12px;background:var(--white);border:1px solid #f0e8f4;box-shadow:var(--shadow)}
+        .tile img{width:100%;height:220px;object-fit:cover;display:block}
+        .tile .label{padding:10px;font-weight:700;color:#4b3a5a;font-size:0.95rem}
+        .toolbar{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;text-decoration:none;background:var(--blue);color:#fff;font-weight:800}
+        .backlink{background:transparent;border:0;color:var(--ink);text-decoration:none;font-weight:700}
+
+        /* lightbox */
+        .lb{position:fixed;inset:0;background:rgba(6,6,8,0.7);display:none;align-items:center;justify-content:center;z-index:80;padding:20px}
+        .lb.is-open{display:flex}
+        .lb-inner{max-width:1100px;width:100%;background:var(--white);border-radius:12px;overflow:hidden;position:relative}
+        .lb-inner img{width:100%;height:auto;display:block}
+        .lb-close{position:absolute;right:14px;top:14px;background:#fff;border:0;padding:8px 10px;border-radius:8px;font-weight:900}
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container"><a class="brand" href="index.html">🌈 MAGIA DAS CORES</a></div>
+    </header>
+    <main class="container">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:12px">
+            <h1>Galeria de elementos gráficos</h1>
+            <a class="backlink" href="index.html">← Voltar</a>
+        </div>
+
+        <p style="color:#6b7188">Explorar ícones, padrões, ilustrações e elementos gráficos usados no projeto. Clique para ampliar.</p>
+
+        <div class="gallery-grid">
+            <div class="tile"><img src="festa.jpg" alt="Festa"><div class="label">Festa — foto</div></div>
+            <div class="tile"><img src="espaçovasio.jpg" alt="Espaço"><div class="label">Espaço e cenografia</div></div>
+            <div class="tile"><img src="festa1.jpg" alt="Atividade"><div class="label">Atividade temática</div></div>
+            <div class="tile"><img src="roupas.jpg" alt="Roupas"><div class="label">Detalhes e figurinos</div></div>
+            <div class="tile"><img src="footbal.jpg" alt="Desporto"><div class="label">Atividades desportivas</div></div>
+            <div class="tile"><img src="giz.jpg" alt="Criatividade"><div class="label">Materiais criativos</div></div>
+            <div class="tile"><img src="vazio.jpg" alt="Fundo"><div class="label">Textura e padrões</div></div>
+            <div class="tile"><img src="logomdc.png" alt="Logotipo"><div class="label">Logótipo</div></div>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lb" role="dialog" aria-hidden="true">
+        <div class="lb-inner">
+            <button class="lb-close" id="lbClose">✕</button>
+            <img id="lbImg" src="" alt="Ampliação">
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const tiles = document.querySelectorAll('.tile img');
+            const lb = document.getElementById('lightbox');
+            const lbImg = document.getElementById('lbImg');
+            const lbClose = document.getElementById('lbClose');
+            tiles.forEach(img => img.addEventListener('click', ()=>{
+                lbImg.src = img.src;
+                lb.classList.add('is-open');
+                lb.setAttribute('aria-hidden','false');
+            }));
+            lbClose.addEventListener('click', ()=>{ lb.classList.remove('is-open'); lb.setAttribute('aria-hidden','true'); lbImg.src = ''; });
+            lb.addEventListener('click', (e)=>{ if(e.target === lb) { lb.classList.remove('is-open'); lb.setAttribute('aria-hidden','true'); lbImg.src = ''; } });
+            document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') { lb.classList.remove('is-open'); lb.setAttribute('aria-hidden','true'); lbImg.src = ''; } });
+        })();
+    </script>
+</body>
+</html>
