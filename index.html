@@ -10,10 +10,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+  
+  
   <style>
-/* =========================================================
-   1. DESIGN TOKENS
-   ========================================================= */
+
+    
+    /* 1. DESIGN TOKENS */
 
 :root {
   /* Brand colors */
@@ -24,11 +26,12 @@
   --orange: #f2a444;
   --pink: #f5b1d0;
 
-  /* Map legacy purple token to brand blue so existing styles follow brand */
+ /*cores extra*/
+  
   --purple: var(--blue);
   --purple-dark: #2b8a92;
 
-  /* Interface colors */
+  /* Interface cors */
   --ink: #29345f;
   --muted: #65708a;
   --paper: #fffdfb;
@@ -40,16 +43,14 @@
   --container-padding: 20px;
   --section-padding: 90px;
 
-  /* Reusable effects */
+  /* Reusable efeitos */
   --shadow: 0 16px 45px rgba(100, 182, 191, 0.10);
   --radius: 26px;
   --transition: 0.2s ease;
 }
 
 
-/* =========================================================
-   2. RESET & GLOBAL STYLES
-   ========================================================= */
+/* 2. RESET & GLOBAL STYLES */
 
 *,
 *::before,
@@ -70,7 +71,6 @@ body {
   line-height: 1.65;
 }
 
-/* Font preview utilities */
 .font-previews {
   max-width: calc(var(--max-width));
   margin: 28px auto;
@@ -124,6 +124,8 @@ body {
   font-weight: 900;
 }
 
+    /*ja a dar em maluca*/
+    
 h1,
 h2,
 h3,
@@ -175,9 +177,7 @@ button {
 }
 
 
-/* =========================================================
-   3. REUSABLE LAYOUT
-   ========================================================= */
+/* 3. REUSABLE LAYOUT e slay que fode*/
 
 .container {
   width: min(
@@ -231,9 +231,7 @@ button {
 }
 
 
-/* =========================================================
-   4. BUTTONS
-   ========================================================= */
+/* 4. botoes em todo o lugar que é canto */
 
 .btn {
   display: inline-flex;
@@ -273,9 +271,7 @@ button {
 }
 
 
-/* =========================================================
-   5. HEADER & NAVIGATION
-   ========================================================= */
+/* 5. HEADER OMBROS SEM JOELHOS NEM PÉS */
 
 .site-header {
   position: sticky;
@@ -294,7 +290,7 @@ button {
   gap: 20px;
 }
 
-/* Image-based logo */
+/* TA AQUI O LOGO CEGA */
 .brand {
   display: inline-flex;
   flex-shrink: 0;
@@ -302,11 +298,6 @@ button {
   gap: 10px;
   text-decoration: none;
 }
-
-/*
-  Use this class on the actual logo image.
-  Adjust max-width to change its size.
-*/
 
 .brand-logo {
   display: block;
@@ -316,7 +307,7 @@ button {
   object-fit: contain;
 }
 
-/* Optional logo text if you use text alongside the image */
+/* Nao mexas é so texto backup */
 .brand-word {
   font-size: 1.3rem;
   font-weight: 800;
@@ -380,9 +371,7 @@ button {
 }
 
 
-/* =========================================================
-   6. HERO SECTION
-   ========================================================= */
+/* 6. MY HERO TIRA ME DAQUI */
 
 .hero {
   position: relative;
@@ -487,9 +476,7 @@ button {
 }
 
 
-/* =========================================================
-   7. HERO ILLUSTRATION
-   ========================================================= */
+/* 7. HERO ILLUSTRAÇOES HELP */
 
 .hero-art {
   position: relative;
@@ -660,10 +647,10 @@ button {
   }
 }
 
+    /*TA TUDO A DAR AQUI NO TOUCHING LURDES*/
 
-/* =========================================================
-   8. INTRODUCTION STRIP
-   ========================================================= */
+
+/* 8. INTRODUCTION STRIP tease e choro*/
 
 .intro-strip {
   padding: 32px 0;
@@ -710,9 +697,7 @@ button {
 }
 
 
-/* =========================================================
-   9. ABOUT SECTION
-   ========================================================= */
+/* 9. ABOUT SECT */
 
 .about-section {
   background: linear-gradient(120deg, #eaf9fc, #fff 72%);
@@ -909,16 +894,15 @@ button {
 }
 
 
-/* =========================================================
-   10. AUDIENCE & INFORMATION CARDS
-   ========================================================= */
+/* 10. fotos slide */
 
 .audience-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
-
+/*porque que tas todo lagado ???????????? NOTA*/
+    
 .info-card {
   position: relative;
   overflow: hidden;
@@ -946,7 +930,7 @@ button {
   z-index: 1;
 }
 
-/* Flip card (front/back) for audience cards */
+/* Flip cartao */
 .flip-card {
   perspective: 1200px;
 }
@@ -1047,9 +1031,7 @@ button {
 }
 
 
-/* =========================================================
-   11. SOCIAL MEDIA & CALENDAR
-   ========================================================= */
+/*11. CALENDARARIO */
 
 .social-layout {
   display: grid;
@@ -1160,6 +1142,8 @@ button {
   object-fit: cover;
 }
 
+    /*que nome nem adivinhar bruh*/
+
 .social-bullets {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1175,6 +1159,7 @@ button {
   font-size: 0.88rem;
   font-weight: 800;
 }
+    /*balas e bolinhos*/
 
 .calendar {
   padding: 30px;
@@ -1227,9 +1212,7 @@ button {
 }
 
 
-/* =========================================================
-   12. BRAND IDENTITY
-   ========================================================= */
+/* 12. BRAND IDENTITY VERY IMPORTANTE */
 
 .identity-section {
   background: #fff9f2;
@@ -1296,7 +1279,7 @@ button {
   font-size: 0.78rem;
 }
 
-
+/*NAO DA PA METER A SCHERZO SO A GAMJA CAGA NISSO LISTA COM OUTRAS*/
 /* Typography samples */
 
 .type-samples {
@@ -1391,7 +1374,7 @@ button {
   font-weight: 800;
 }
 
-/* Palette groupings (Primary / Secondary) */
+/* Palette GRUPOS (Primary / Secondary) */
 .palette-groups {
   display: flex;
   gap: 18px;
@@ -1409,9 +1392,7 @@ button {
 }
 
 
-/* =========================================================
-   13. SERVICES
-   ========================================================= */
+/* 13. SERVICES? */
 
 .services-section {
   background: linear-gradient(135deg, #f9f0ff, #f0fbfc);
@@ -1472,9 +1453,7 @@ button {
 }
 
 
-/* =========================================================
-   14. PACKAGES & PRICING
-   ========================================================= */
+/*14. Packs e preços que tbm tens que os vender */
 
 .pack-section {
   background: var(--white);
@@ -1592,9 +1571,7 @@ button {
 }
 
 
-/* =========================================================
-   15. CREATIVE PORTFOLIO
-   ========================================================= */
+/* 15. "PORTFOLIO" */
 
 .creative-grid {
   display: grid;
@@ -1697,9 +1674,7 @@ button {
 }
 
 
-/* =========================================================
-   16. LOGO SHOWCASE
-   ========================================================= */
+/* 16. LOGo DESTAQUE */
 
 .logo-section {
   background: #f9f5ff;
@@ -1737,7 +1712,8 @@ button {
   background: #fffaf1;
 }
 
-/* Text-only demonstration styles */
+/* Text-only */
+    
 .logo-demo.original {
   color: #7a3e9f;
   font-family: "Baloo 2", cursive;
@@ -1799,9 +1775,7 @@ button {
 }
 
 
-/* =========================================================
-   17. CONTACT SECTION & FORM
-   ========================================================= */
+/* 17. CONTACT SECTION que mais vale tirar pq wtf nao é mesmo pa tares a vender o serviço menina Lurdes*/
 
 .contact-section {
   background: linear-gradient(120deg, #6736a0, #492776);
@@ -1905,9 +1879,7 @@ button {
 }
 
 
-/* =========================================================
-   18. FOOTER & BACK-TO-TOP BUTTON
-   ========================================================= */
+/* 18. FOOTER uau chegamos aos pés*/
 
 .site-footer {
   padding: 27px 0;
@@ -1971,10 +1943,8 @@ button {
   transform: translateY(0);
 }
 
-
-/* =========================================================
-   19. TABLET RESPONSIVE STYLES
-   ========================================================= */
+/*era uma vez disseram que pareço crazy*/
+/* 19. TABLET STYLES harry styles? */
 
 @media (max-width: 950px) {
   :root {
@@ -2031,9 +2001,7 @@ button {
 }
 
 
-/* =========================================================
-   20. MOBILE RESPONSIVE STYLES
-   ========================================================= */
+/* 20. Telemovel STYLES de sono */
 
 @media (max-width: 740px) {
   :root {
@@ -2189,9 +2157,7 @@ button {
 }
 
 
-/* =========================================================
-   21. SMALL MOBILE DEVICES
-   ========================================================= */
+/* 21. TBM SMALL TELES so nao da pa nokias*/
 
 @media (max-width: 430px) {
   h1 {
@@ -2274,9 +2240,7 @@ button {
 }
 
 
-/* =========================================================
-   22. ACCESSIBILITY & REDUCED MOTION
-   ========================================================= */
+/* 22. STOR CHAT HELPPP WTF */
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -2286,12 +2250,12 @@ button {
   *,
   *::before,
   *::after {
-    animation: none !important;
-    transition: none !important;
+    animation: none;
+    transition: none;
   }
 }
 
-  /* Center the service cards */
+  /* Center cards */
   .services-grid {
     display: flex;
     justify-content: center;
@@ -2300,7 +2264,7 @@ button {
     gap: 24px;
   }
 
-  /* Center content inside each card */
+  /* CenteR inside card */
   .service {
     display: flex;
     flex-direction: column;
@@ -2309,7 +2273,7 @@ button {
     justify-content: flex-start;
   }
 
-  /* Center the icon */
+  /* Center icon */
   .service-icon {
     display: flex;
     align-items: center;
@@ -2323,8 +2287,12 @@ button {
   }
 
 </style>
+
+<!--/*DAMM DANIEL*//*THAT SUCKED*/USUCK-->
+  
 </head>
 <body>
+ 
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#inicio" aria-label="Magia das Cores — início">
@@ -2333,7 +2301,8 @@ button {
     alt="Logótipo Magia das Cores"
     class="brand-logo"
   >
-</a>
+     
+</a> 
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
       <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
         <a href="#inicio">Início</a><a href="#projeto">O projeto</a><a href="#identidade">Identidade</a><a href="#conteudos">Conteúdos</a>
@@ -2348,6 +2317,8 @@ button {
         <div class="hero-copy">
           <span class="eyebrow">✦ Showcase multimédia · 2026</span>
           <h1><span class="line-one">MAGIA</span><span class="line-two">DAS <span>CORES</span></span></h1>
+            
+          <!--HMM YES I SMELL EASY*-->
           
           <br>
           <div class="hero-tagline">“Onde a Magia ganha mais Cor!”</div>
@@ -2384,7 +2355,8 @@ button {
         <div class="text-content">
           <span class="eyebrow">01 · Enquadramento</span>
           <h2>Um projeto com cor, propósito e imaginação.</h2>
-          <br
+          
+          <br>
           <p>A Magia das Cores é uma marca direcionada para o universo infantil, dedicada à criação de momentos de diversão e experiências para crianças, nomeadamente através da organização e animação de festas de aniversário.</p>
           <p>O contacto com a marca permitiu desenvolver um projeto multidisciplinar no qual o design e a comunicação assumem um papel fundamental na apresentação dos serviços e na criação de uma presença digital mais consistente.</p>
           <p>O projeto surgiu também como uma oportunidade de aplicar, num contexto real, conhecimentos adquiridos ao longo da formação em Desenvolvimento de Produtos Multimédia.</p>
@@ -2409,7 +2381,7 @@ button {
 
           <button class="slider-arrow prev" type="button" aria-label="Imagem anterior">&#10094;</button>
           <button class="slider-arrow next" type="button" aria-label="Imagem seguinte">&#10095;</button>
-
+<!--bruh-->
         
         </div>
       </div>
@@ -2450,11 +2422,15 @@ button {
             </div>
           </article>
 
+          <!--*ta dificil por aqui lista no notebook-->
+<!--anota falta fotos-->
+          
           <article class="info-card flip-card">
             <div class="flip-inner">
               <div class="flip-front">
                 <h3>Comunicação dirigida aos pais</h3>
                 <p>Os pais ou responsáveis têm um papel central na escolha de um espaço para os seus filhos; precisam de informação clara e credível.</p>
+                
                 <ul class="check-list">
                   <li>Serviços, preços e condições</li>
                   <li>Horários e localização</li>
@@ -2462,6 +2438,7 @@ button {
                   <li>Condições das festas</li>
                   <li>Contacto, segurança e acompanhamento</li>
                 </ul>
+                
                 <span class="audience-tag">Público primário: pais/encarregados</span>
               </div>
               <div class="flip-back" aria-hidden="true">
@@ -2475,6 +2452,7 @@ button {
               <div class="flip-front">
                 <h3>O equilíbrio da marca</h3>
                 <p>Uma comunicação eficaz combina a dimensão emocional do universo infantil com a clareza de informação de que as famílias precisam.</p>
+                
                 <ul class="check-list">
                   <li>Entusiasmo e proximidade</li>
                   <li>Informação organizada</li>
@@ -2482,6 +2460,7 @@ button {
                   <li>Qualidade e profissionalismo</li>
                   <li>Confiança em todos os pontos de contacto</li>
                 </ul>
+                
                 <span class="audience-tag">Emoção + confiança</span>
               </div>
               <div class="flip-back" aria-hidden="true">
@@ -2492,13 +2471,15 @@ button {
         </div>
       </div>
     </section>
-
+<!--so idvdidvidividivdivdiv fds-->
+    
     <section class="section" id="conteudos">
       <div class="container"><div class="section-head"><span class="eyebrow">04 · Presença digital</span><h2>Conteúdos que mostram a experiência.</h2><p>As redes sociais funcionam como uma montra digital: ajudam a mostrar o espaço, as atividades e os momentos que tornam a experiência especial.</p></div>
       <br> 
       <div class="social-layout"><article class="social-card"><h3><span style="font-size:1.5rem"> </span> Redes sociais e marketing digital</h3>
           <p>O Instagram é particularmente relevante para uma marca visual como a Magia das Cores. A consistência das cores, tipografia e elementos gráficos ajuda a tornar o perfil reconhecível e único.</p>
 <br>
+        <!--TA AQUI O BOTAO CRLH-->
           <a
   href="https://www.instagram.com/festas.magiadascores"
   class="instagram-button"
@@ -2531,7 +2512,9 @@ button {
               <img src="giz.jpg" alt="Materiais para uma atividade criativa">
             </div>
           </section>
-
+        
+<!--CRTL CCTRL V É GODS SENT-->
+        
         </article>
         <article class="calendar"><h3 style="margin-bottom:8px">Calendário semanal de conteúdos</h3><p style="font-size:.9rem;color:#77708a">Planear publicações ajuda a manter uma presença regular e evita uma comunicação feita de forma aleatória.</p>
             <div class="calendar-row"><div class="calendar-day">Segunda-feira</div><div class="calendar-content"><span>Fotografia/clip Story </span><br>Destaque de uma festa.</div></div>
@@ -2638,6 +2621,17 @@ button {
   <footer class="site-footer"><div class="container footer-row"><a class="footer-brand" href="#inicio" aria-label="Magia das Cores — voltar ao início"><img src="logomdc.png" alt="Logótipo Magia das Cores"></a>
     <div class="footer-copy">“Onde a Magia ganha mais Cor!” · Showcase multimédia · 2026</div>
     
+    
+    <!-- CHECK LISTA apagar after donme 
+    falta
+    02 magu icons botao direcionar a imagens no more secçoes ver cena dos flyers  
+    03 imagens check textos,
+    04 mudar fotos layout insta
+    05 icons nos valores converter imagens, fiz no big gap
+    06 galeria
+    -->
+
+    <!-- vais levae com o pé NAO O FOOTER NO CU-->
   </footer>
 
   <button class="back-top" id="backTop" aria-label="Voltar ao topo">↑</button>
@@ -2663,9 +2657,7 @@ button {
 
    
 
-    /* =========================================================
-       Photo Slider Functionality
-       ========================================================= */
+    /* FOTO Slider*/
 
     const photoTrack = document.getElementById('photoTrack');
     const photoLabel = document.getElementById('photoLabel');
@@ -2693,9 +2685,7 @@ button {
 
     updatePhotoSlider();
 
-    /* =========================================================
-       Automatic Slide Rotation
-       ========================================================= */
+    /* Automatic Slide Rotation*/
 
     let slideInterval = setInterval(() => {
       currentSlide = (currentSlide + 1) % slides.length;
@@ -2713,9 +2703,7 @@ button {
       }, 5000);
     });
 
-    /* =========================================================
-       Generic Slider Initializer
-       ========================================================= */
+
 
     document.querySelectorAll('[data-slider]').forEach((slider) => {
       const track = slider.querySelector('.slider-track');
@@ -2841,7 +2829,17 @@ button {
           }
         });
       });
-    })();
+    })();    //nao percebi mas vou descobrir
+
+
+    
   </script>
 </body>
 </html>
+
+<!-- agradeço ao professor chatbot, aos desconhecidos do reddit com mais nada pa fazer,
+a quem ja faz sites no pre historico mas mitico github, 
+e agradeço a anasofia e a jessica por terem paciencia comigo enquanto me tripava no codigo
+e já agora 
+FODA SE WORDPRESS -lurdes -->
+
