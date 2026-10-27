@@ -201,10 +201,19 @@
       box-shadow: inset 0 0 0 1px rgba(255,255,255,0.28);
     }
 
+    .visual-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .visual::before {
       content: "";
       position: absolute;
       inset: 0;
+      z-index: 1;
       background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(20,25,40,0.15));
     }
 
@@ -212,7 +221,7 @@
       position: absolute;
       left: 22px;
       top: 22px;
-      z-index: 1;
+      z-index: 2;
       padding: 9px 14px;
       border-radius: 999px;
       background: rgba(255,255,255,0.82);
@@ -225,7 +234,7 @@
       position: absolute;
       right: 22px;
       bottom: 22px;
-      z-index: 1;
+      z-index: 2;
       padding: 18px 20px;
       border-radius: 22px;
       background: rgba(255,255,255,0.82);
@@ -354,15 +363,19 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="subpages.css">
 </head>
-<body>
+<body class="subpage">
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html" class="brand">MAGIA<span>DAS CORES</span></a>
+      <a href="index.html" class="brand" aria-label="Magia das Cores — início">
+        <img src="logomdc.png" alt="Logótipo Magia das Cores" class="brand-logo">
+      </a>
       <nav class="nav-links" aria-label="Navegação principal">
         <a href="index.html#inicio">Início</a>
         <a href="index.html#servicos">Serviços</a>
         <a href="index.html#identidade">Identidade</a>
+        <a href="index.html#conteudos">Conteúdos</a>
       </nav>
       <a href="index.html#servicos" class="btn btn-primary">Voltar ao site</a>
     </div>
@@ -376,10 +389,11 @@
           <h1>Pack Brilhante</h1>
           <p class="lead">Uma proposta completa para celebrar com cor, energia e muita diversão. O pacote reúne animação, lanche, decoração e extras para criar uma festa memorável para crianças e famílias.</p>
           <div class="meta">
-            <span>🎂 2 horas</span>
-            <span>👧 Mínimo 15 crianças</span>
-            <span>✨ Experiência completa</span>
+            <span>2 horas</span>
+            <span>Mínimo 15 crianças</span>
+            <span>Experiência completa</span>
           </div>
+          <br>
           <div class="cta-row">
             <a href="index.html#servicos" class="btn btn-primary">Ver outros serviços</a>
             <a href="index.html#inicio" class="btn btn-secondary">Voltar ao início</a>
@@ -387,7 +401,8 @@
         </div>
 
         <div class="visual" aria-label="Pack Brilhante da Magia das Cores">
-          <div class="badge">✨ A festa começa aqui</div>
+          <img src="Decoracao02.JPG" alt="Criança a fazer pintura facial numa festa" class="visual-image">
+          <div class="badge">A festa começa aqui</div>
           <div class="price"><strong>15€</strong><span>por criança</span></div>
         </div>
       </div>
@@ -397,6 +412,7 @@
       <div class="container details-grid">
         <article class="panel">
           <h2>O que está incluído?</h2>
+          <br>
           <div class="included-grid">
             <div class="included-item"><span>✓</span><span>Lanche: bicos de pato mistos, sumo, pipocas, batatas fritas e gelatina</span></div>
             <div class="included-item"><span>✓</span><span>Bolo, convite e decoração personalizada</span></div>
