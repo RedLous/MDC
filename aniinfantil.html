@@ -1,55 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-
-<!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="theme-color" content="#64b6bf">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <title>Galeria de Fotografias</title>
 
   <style>
-    /* Secção da galeria */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #352642;
+    }
+
     .gallery-section {
       width: 100%;
       max-width: 1160px;
       margin: 0 auto;
       padding: 40px 20px;
-      box-sizing: border-box;
     }
 
-    .gallery-section h2 {
+    .gallery-section > h1 {
+      margin: 0 0 10px;
       text-align: center;
-      margin-bottom: 10px;
     }
 
     .gallery-intro {
+      margin: 0 0 28px;
       text-align: center;
-      margin-bottom: 28px;
     }
 
-    /* Grelha de fotografias */
+    .gallery-category {
+      margin-top: 30px;
+    }
+
+    .gallery-category h2 {
+      margin: 0 0 14px;
+      font-size: 1.35rem;
+    }
+
     .photo-gallery {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
 
-    /* Cada fotografia */
     .gallery-item {
       display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
       overflow: hidden;
       border-radius: 12px;
       aspect-ratio: 4 / 3;
       background: #f3edf5;
+      cursor: pointer;
     }
 
     .gallery-item img {
@@ -60,86 +71,209 @@
       transition: transform 0.35s ease;
     }
 
-    /* Efeito ao passar o rato */
     .gallery-item:hover img {
       transform: scale(1.06);
     }
 
-    /* Tablets */
-    @media (max-width: 800px) {
-      .photo-gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
+    .gallery-item:focus-visible,
+    .gallery-close:focus-visible {
+      outline: 3px solid #7945ae;
+      outline-offset: 3px;
     }
 
-    /* Telemóveis */
-    @media (max-width: 480px) {
+    .gallery-popup {
+      width: min(900px, calc(100% - 32px));
+      max-width: none;
+      max-height: min(760px, calc(100% - 32px));
+      padding: 24px;
+      border: 0;
+      border-radius: 18px;
+      color: #352642;
+      background: #fff;
+      box-shadow: 0 24px 80px #24132f55;
+    }
+
+    .gallery-popup::backdrop {
+      background: #20162dcc;
+      backdrop-filter: blur(4px);
+    }
+
+    .gallery-popup-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .gallery-popup-header h2 {
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .gallery-close {
+      flex: 0 0 auto;
+      padding: 8px 14px;
+      border: 0;
+      border-radius: 999px;
+      color: #fff;
+      background: #7945ae;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .gallery-popup-hint {
+      margin: 0 0 12px;
+      color: #6b7188;
+      font-size: 0.9rem;
+    }
+
+    .gallery-popup-track {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      padding-bottom: 12px;
+      scroll-snap-type: x mandatory;
+      scrollbar-color: #b783cf #f3edf5;
+    }
+
+    .gallery-popup-track img {
+      flex: 0 0 100%;
+      width: 100%;
+      max-height: 62vh;
+      border-radius: 12px;
+      object-fit: contain;
+      background: #f3edf5;
+      scroll-snap-align: start;
+    }
+
+    @media (max-width: 600px) {
+      .gallery-section {
+        padding: 28px 16px;
+      }
+
       .photo-gallery {
         grid-template-columns: 1fr;
         gap: 12px;
       }
 
-      .gallery-section {
-        padding: 28px 16px;
+      .gallery-popup {
+        padding: 18px;
       }
     }
   </style>
+  <link rel="stylesheet" href="subpages.css">
 </head>
-
-<body>
-
-  <section class="gallery-section">
-    <h2>Galeria de Fotografias</h2>
-
-    <p class="gallery-intro">
-      Descobre alguns dos nossos momentos especiais.
-    </p>
-
-    <div class="photo-gallery">
-
-      <a href="images/photo1.jpg"
-         class="gallery-item" target="_blank">
-        <img src="images/photo1.jpg"
-             alt="Festa de aniversário">
+<body class="subpage">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Magia das Cores — início">
+        <img src="logomdc.png" alt="Logótipo Magia das Cores" class="brand-logo">
       </a>
-
-      <a href="images/photo2.jpg"
-         class="gallery-item" target="_blank">
-        <img src="images/photo2.jpg"
-             alt="Decoração de festa">
-      </a>
-
-      <a href="images/photo3.jpg"
-         class="gallery-item" target="_blank">
-        <img src="images/photo3.jpg"
-             alt="Atividade criativa">
-      </a>
-
-      <a href="images/photo4.jpg"
-         class="gallery-item" target="_blank">
-        <img src="images/photo4.jpg"
-             alt="Decoração colorida">
-      </a>
-
-      <a href="images/photo5.jpg"
-         class="gallery-item" target="_blank">
-        <img src="images/photo5.jpg"
-             alt="Celebração especial">
-      </a>
-
-      <a href="images/photo6.jpg"
-         class="gallery-item" target="_blank">
-        <img src="images/photo6.jpg"
-             alt="Momentos divertidos">
-      </a>
-
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="index.html#inicio">Início</a>
+        <a href="index.html#servicos">Serviços</a>
+        <a href="index.html#identidade">Identidade</a>
+        <a href="index.html#conteudos">Conteúdos</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="index.html#servicos">Voltar ao site</a>
     </div>
-  </section>
+  </header>
+  <main>
+    <section class="gallery-section">
+      <div class="page-heading">
+        <h1>Galeria de Fotografias</h1>
+        <p>Clica numa fotografia para abrir a mini galeria e percorrer os momentos especiais.</p>
+      </div>
 
-</body>
-</html>
+      <section class="gallery-category">
+        <h2>Festas e decoração</h2>
+        <div class="photo-gallery" aria-label="Fotografias de festas e decoração">
+          <button class="gallery-item" type="button">
+            <img src="festa.jpg" alt="Festa de aniversário">
+          </button>
+          <button class="gallery-item" type="button">
+            <img src="Decoracao01.JPG" alt="Decoração de festa">
+          </button>
+          <button class="gallery-item" type="button">
+            <img src="Decoracao02.JPG" alt="Detalhes da decoração de uma festa">
+          </button>
+        </div>
+      </section>
 
+      <section class="gallery-category">
+        <h2>Atividades e animação</h2>
+        <div class="photo-gallery" aria-label="Fotografias de atividades e animação">
+          <button class="gallery-item" type="button">
+            <img src="Atividades01.JPG" alt="Atividade infantil">
+          </button>
+          <button class="gallery-item" type="button">
+            <img src="Atividades02.JPG" alt="Mais atividades infantis">
+          </button>
+          <button class="gallery-item" type="button">
+            <img src="footbal.jpg" alt="Atividade desportiva infantil">
+          </button>
+        </div>
+      </section>
 
+      <section class="gallery-category">
+        <h2>Brincadeiras e jogos</h2>
+        <div class="photo-gallery" aria-label="Fotografias de brincadeiras e jogos">
+          <button class="gallery-item" type="button">
+            <img src="Brinquedos01.JPG" alt="Brinquedos e jogos">
+          </button>
+          <button class="gallery-item" type="button">
+            <img src="Brinquedos02.JPG" alt="Mais brinquedos e jogos">
+          </button>
+          <button class="gallery-item" type="button">
+            <img src="Brinquedos03.JPG" alt="Brinquedos para brincar em grupo">
+          </button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <dialog class="gallery-popup" id="gallery-popup" aria-labelledby="gallery-popup-title">
+    <div class="gallery-popup-header">
+      <h2 id="gallery-popup-title"></h2>
+      <button class="gallery-close" type="button" aria-label="Fechar galeria">Fechar</button>
+    </div>
+    <p class="gallery-popup-hint">Desliza para percorrer as 3 fotografias.</p>
+    <div class="gallery-popup-track" tabindex="0" aria-label="Fotografias da secção"></div>
+  </dialog>
+
+  <script>
+    const galleryPopup = document.querySelector("#gallery-popup");
+    const galleryTitle = document.querySelector("#gallery-popup-title");
+    const galleryTrack = document.querySelector(".gallery-popup-track");
+
+    document.querySelectorAll(".gallery-category").forEach((category) => {
+      category.querySelectorAll(".gallery-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          galleryTitle.textContent = category.querySelector("h2").textContent;
+          galleryTrack.replaceChildren(
+            ...Array.from(category.querySelectorAll(".gallery-item img"), (image) => {
+              const popupImage = image.cloneNode();
+              popupImage.loading = "lazy";
+              return popupImage;
+            })
+          );
+          galleryTrack.scrollLeft = 0;
+          galleryPopup.showModal();
+        });
+      });
+    });
+
+    document.querySelector(".gallery-close").addEventListener("click", () => {
+      galleryPopup.close();
+    });
+
+    galleryPopup.addEventListener("click", (event) => {
+      if (event.target === galleryPopup) {
+        galleryPopup.close();
+      }
+    });
+  </script>
 </body>
 </html>
