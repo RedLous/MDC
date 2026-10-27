@@ -6,7 +6,7 @@
     <title>Elementos gráficos — Galeria · Magia das Cores</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root{
             --blue:#64b6bf;--green:#62a65f;--cream:#f2e0d5;--pink:#f5b1d0;--purple:#64b6bf;--ink:#29345f;--paper:#fffdfb;--radius:18px;--shadow:0 20px 60px rgba(40,20,60,0.12);
@@ -17,9 +17,18 @@
         .container{width:min(1100px,calc(100% - 40px));margin:0 auto}
         .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-family:'Baloo 2',cursive}
         h1{font-family:'Baloo 2',cursive;margin:8px 0 6px}
+        .gallery-category{margin:34px 0}
+        .gallery-category h2{margin:0 0 14px}
         .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:22px 0}
-        .tile{position:relative;overflow:hidden;border-radius:12px;background:var(--white);border:1px solid #f0e8f4;box-shadow:var(--shadow)}
-        .tile img{width:100%;height:220px;object-fit:cover;display:block}
+        .gallery-category--large-art .gallery-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+        .gallery-category--large-art .tile img{height:300px;padding:12px}
+        .gallery-category[aria-labelledby="mascots-title"] .tile img[src="mascoteolawhite.png"]{transform:scale(0.9)}
+        .gallery-category[aria-labelledby="illustrations-title"] .tile.dark-art img{transform:scale(0.5)}
+        .tile{position:relative;overflow:hidden;border-radius:12px;background:#fff;border:1px solid #f0e8f4;box-shadow:var(--shadow)}
+        .tile img{width:100%;height:220px;object-fit:contain;display:block;padding:18px}
+        .tile.dark-art{background:#29345f;border-color:#29345f}
+        .tile.dark-art img{background:#29345f}
+        .tile.dark-art .label{color:#fff}
         .tile .label{padding:10px;font-weight:700;color:#4b3a5a;font-size:0.95rem}
         .toolbar{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
         .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;text-decoration:none;background:var(--blue);color:#fff;font-weight:800}
@@ -29,32 +38,131 @@
         .lb{position:fixed;inset:0;background:rgba(6,6,8,0.7);display:none;align-items:center;justify-content:center;z-index:80;padding:20px}
         .lb.is-open{display:flex}
         .lb-inner{max-width:1100px;width:100%;background:var(--white);border-radius:12px;overflow:hidden;position:relative}
+        .lb-inner.is-scrollable{max-height:calc(100vh - 40px);overflow-y:auto}
+        .lb-inner.is-dark{background:#29345f}
+        .lb-inner.is-dark img{background:#29345f}
         .lb-inner img{width:100%;height:auto;display:block}
         .lb-close{position:absolute;right:14px;top:14px;background:#fff;border:0;padding:8px 10px;border-radius:8px;font-weight:900}
     </style>
+    <link rel="stylesheet" href="subpages.css">
 </head>
-<body>
+<body class="subpage">
     <header class="site-header">
-        <div class="container"><a class="brand" href="index.html">🌈 MAGIA DAS CORES</a></div>
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="Magia das Cores — início">
+                <img src="logomdc.png" alt="Logótipo Magia das Cores" class="brand-logo">
+            </a>
+            <nav class="nav-links" aria-label="Navegação principal">
+                <a href="index.html#inicio">Início</a>
+                <a href="index.html#servicos">Serviços</a>
+                <a href="index.html#identidade">Identidade</a>
+                <a href="index.html#conteudos">Conteúdos</a>
+            </nav>
+            <a class="btn btn-primary nav-cta" href="index.html#identidade">Voltar ao site</a>
+        </div>
     </header>
     <main class="container">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px;gap:12px">
+        <div class="page-heading">
             <h1>Galeria de elementos gráficos</h1>
-            <a class="backlink" href="index.html">← Voltar</a>
+            <p>Explora balões, mascotes e ilustrações do projeto.</p>
         </div>
 
-        <p style="color:#6b7188">Explorar ícones, padrões, ilustrações e elementos gráficos usados no projeto. Clique para ampliar.</p>
+        <section class="gallery-category" aria-labelledby="balloons-title">
+            <h2 id="balloons-title">Padrões</h2>
+            <div class="gallery-grid">
+                <div class="tile"><img src="padrao01.png" alt="Padrao01"><div class="label">Padrão Principal</div></div>
+                <div class="tile"><img src="padrao02.png" alt="Padrao02"><div class="label">Padrão Secundário</div></div>
+                <div class="tile"><img src="padrao03.png" alt="Padrao03"><div class="label">Padrão Terciário</div></div>
+                <div class="tile"><img src="padrao04.png" alt="Padrao04"><div class="label">Padrão Quaternário</div></div>
+                
+            </div>
+        </section>
+<br>
+        <section class="gallery-category" aria-labelledby="balloons-title">
+            <h2 id="balloons-title">Balões coloridos</h2>
+            <div class="gallery-grid">
+                <div class="tile"><img src="azulb.png" alt="Balão azul"><div class="label">Balão azul</div></div>
+                <div class="tile"><img src="pinkb.png" alt="Balão cor-de-rosa"><div class="label">Balão cor-de-rosa</div></div>
+                <div class="tile"><img src="redb.png" alt="Balão vermelho"><div class="label">Balão vermelho</div></div>
+                <div class="tile"><img src="verdeb.png" alt="Balão verde"><div class="label">Balão verde</div></div>
+                <div class="tile"><img src="yellowb.png" alt="Balão amarelo"><div class="label">Balão amarelo</div></div>
+            </div>
+        </section>
+<br>
+        <section class="gallery-category gallery-category--large-art" aria-labelledby="mascots-title">
+            <h2 id="mascots-title">Mascotes Magu</h2>
+            <div class="gallery-grid">
+                <div class="tile"><img src="magu.png" alt="Mascote Magu"><div class="label">Magu</div></div>
+                <div class="tile dark-art"><img src="Maguwhite.png" alt="Mascote Magu em branco"><div class="label">Magu branco</div></div>
+                <div class="tile"><img src="maguheart.png" alt="Magu com coração"><div class="label">Magu com coração</div></div>
+                <div class="tile dark-art"><img src="maguheartwhite.png" alt="Magu com coração em branco"><div class="label">Magu com coração branco</div></div>
+                <div class="tile"><img src="magupisca.png" alt="Magu a piscar o olho"><div class="label">Magu a piscar</div></div>
+                <div class="tile dark-art"><img src="magupiscawhite.png" alt="Magu a piscar em branco"><div class="label">Magu a piscar - versão branca</div></div>
+                <div class="tile"><img src="magustar.png" alt="Magu com estrelas nos olhos"><div class="label">Magu com estrelas</div></div>
+                <div class="tile dark-art"><img src="magustarwhite.png" alt="Magu com estrelas nos olhos em branco"><div class="label">Magu com estrelas - versão branca</div></div>
+                <div class="tile"><img src="Mascote.png" alt="Magu"><div class="label">Magu</div></div>
+                <div class="tile dark-art"><img src="mascotewhite.png" alt="Magu em branco"><div class="label">Magu - versão branca</div></div>
+                <div class="tile"><img src="Mascoteola.png" alt="Magu"><div class="label">Magu pose</div></div>
+                <div class="tile dark-art"><img src="mascoteolawhite.png" alt="Magu pose em branco"><div class="label">Magu pose - versão branca</div></div>
+                <div class="tile"><img src="mynameis.png" alt="Magu"><div class="label">Magu diz: 'O meu nome é Magu!'</div></div>
+                <div class="tile"><img src="boy.png" alt="Magu"><div class="label">Magu Menino</div></div>
+                <div class="tile"><img src="girl.png" alt="Magu"><div class="label">Magu Menina</div></div>
+                
+                
+            </div>
+        </section>
+<br>
+        <section class="gallery-category gallery-category--large-art" aria-labelledby="illustrations-title">
+            <h2 id="illustrations-title">Ícones e ilustrações</h2>
+            <div class="gallery-grid">
+                <div class="tile"><img src="balao.png" alt="Ilustração de um balão"><div class="label">Balão</div></div>
+                <div class="tile"><img src="bola.png" alt="Ilustração de uma bola"><div class="label">Bola</div></div>
+                <div class="tile"><img src="bolo.png" alt="Ilustração de um bolo de aniversário"><div class="label">Bolo de aniversário</div></div>
+                <div class="tile"><img src="carta.png" alt="Ilustração de uma carta"><div class="label">Carta</div></div>
+                <div class="tile"><img src="cartola.png" alt="Ilustração de uma cartola"><div class="label">Cartola</div></div>
+                <div class="tile"><img src="doce.png" alt="Ilustração de um doce"><div class="label">Doce</div></div>
+                <div class="tile"><img src="pincel.png" alt="Ilustração de um pincel"><div class="label">Pincel</div></div>
+                <div class="tile"><img src="presente.png" alt="Ilustração de um presente"><div class="label">Presente</div></div>
+                <div class="tile dark-art"><img src="bolabranca.png" alt="Bola em branco"><div class="label">Bola — versão branca</div></div>
+                <div class="tile dark-art"><img src="cartabranca.png" alt="Carta em branco"><div class="label">Carta — versão branca</div></div>
+                <div class="tile dark-art"><img src="chapeubranco.png" alt="Chapéu em branco"><div class="label">Chapéu — versão branca</div></div>
+                <div class="tile dark-art"><img src="docebranco.png" alt="Doce em branco"><div class="label">Doce — versão branca</div></div>
+                <div class="tile dark-art"><img src="pincelbranco.png" alt="Pincel em branco"><div class="label">Pincel — versão branca</div></div>
+                <div class="tile dark-art"><img src="presentebranco.png" alt="Presente em branco"><div class="label">Presente — versão branca</div></div>
 
-        <div class="gallery-grid">
-            <div class="tile"><img src="festa.jpg" alt="Festa"><div class="label">Festa — foto</div></div>
-            <div class="tile"><img src="espaçovasio.jpg" alt="Espaço"><div class="label">Espaço e cenografia</div></div>
-            <div class="tile"><img src="festa1.jpg" alt="Atividade"><div class="label">Atividade temática</div></div>
-            <div class="tile"><img src="roupas.jpg" alt="Roupas"><div class="label">Detalhes e figurinos</div></div>
-            <div class="tile"><img src="footbal.jpg" alt="Desporto"><div class="label">Atividades desportivas</div></div>
-            <div class="tile"><img src="giz.jpg" alt="Criatividade"><div class="label">Materiais criativos</div></div>
-            <div class="tile"><img src="vazio.jpg" alt="Fundo"><div class="label">Textura e padrões</div></div>
-            <div class="tile"><img src="logomdc.png" alt="Logotipo"><div class="label">Logótipo</div></div>
-        </div>
+            </div>
+        </section>
+<br>
+        <section class="gallery-category gallery-category--large-art" aria-labelledby="illustrations-title">
+            <h2 id="illustrations-title">Jogos e atividades</h2>
+            <h2 id="illustrations-title">Twister</h2>
+            <div class="gallery-grid">
+                <div class="tile"><img src="twister.png" alt="Ilustração de um balão"><div class="label">Twister</div></div>
+                <div class="tile"><img src="twistamarelo.png" alt="Ilustração de uma bola"><div class="label">Bola</div></div>
+                <div class="tile"><img src="twistverde.png" alt="Ilustração de um bolo de aniversário"><div class="label">Bolo de aniversário</div></div>
+                <div class="tile"><img src="twistvermelho.png" alt="Ilustração de uma carta"><div class="label">Carta</div></div>
+                <div class="tile"><img src="twistpink.png" alt="Ilustração de uma cartola"><div class="label">Cartola</div></div>
+                <div class="tile"><img src="twistazul.png" alt="Ilustração de um doce"><div class="label">Doce</div></div>
+                
+            </div>
+        </section>
+
+        <section class="gallery-category gallery-category--large-art" aria-labelledby="illustrations-title">
+            <h2 id="illustrations-title">Jogo da Macaca</h2>
+            <div class="gallery-grid">
+                <div class="tile"><img src="macaca1.png" alt="Ilustração de um balão"><div class="label">Jogo da Macaca</div></div>
+                <div class="tile"><img src="macaca2.png" alt="Ilustração de um balão"><div class="label">Jogo da Macaca</div></div>
+            </div>
+        </section>
+
+        <section class="gallery-category gallery-category--large-art" aria-labelledby="illustrations-title">
+            <h2 id="illustrations-title">Kokas</h2>
+            <div class="gallery-grid">
+                <div class="tile"><img src="kokas.png" alt="Ilustração de um balão"><div class="label">Kokas</div></div>
+                
+            </div>
+        </section>
+
     </main>
 
     <div id="lightbox" class="lb" role="dialog" aria-hidden="true">
@@ -68,16 +176,28 @@
         (function(){
             const tiles = document.querySelectorAll('.tile img');
             const lb = document.getElementById('lightbox');
+            const lbInner = lb.querySelector('.lb-inner');
             const lbImg = document.getElementById('lbImg');
             const lbClose = document.getElementById('lbClose');
             tiles.forEach(img => img.addEventListener('click', ()=>{
                 lbImg.src = img.src;
+                const isMascotImage = img.closest('[aria-labelledby="mascots-title"]') !== null;
+                const isLongActivityImage = /^(?:macaca[12]|kokas)\.png$/i.test(img.getAttribute('src').split('/').pop());
+                lbInner.classList.toggle('is-scrollable', isMascotImage || isLongActivityImage);
+                lbInner.classList.toggle('is-dark', img.closest('.tile').classList.contains('dark-art'));
                 lb.classList.add('is-open');
                 lb.setAttribute('aria-hidden','false');
             }));
-            lbClose.addEventListener('click', ()=>{ lb.classList.remove('is-open'); lb.setAttribute('aria-hidden','true'); lbImg.src = ''; });
-            lb.addEventListener('click', (e)=>{ if(e.target === lb) { lb.classList.remove('is-open'); lb.setAttribute('aria-hidden','true'); lbImg.src = ''; } });
-            document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') { lb.classList.remove('is-open'); lb.setAttribute('aria-hidden','true'); lbImg.src = ''; } });
+            const closeLightbox = () => {
+                lb.classList.remove('is-open');
+                lb.setAttribute('aria-hidden','true');
+                lbImg.src = '';
+                lbInner.classList.remove('is-scrollable');
+                lbInner.classList.remove('is-dark');
+            };
+            lbClose.addEventListener('click', closeLightbox);
+            lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLightbox(); });
+            document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLightbox(); });
         })();
     </script>
 </body>
