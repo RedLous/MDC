@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-<!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Galeria de Fotografias</title>
+  <meta name="theme-color" content="#64b6bf">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Eventos Especiais | Magia das Cores</title>
 
   <style>
     /* Secção principal */
@@ -23,7 +17,6 @@
       margin: 0 auto;
       padding: 40px 20px;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
       color: #38313c;
     }
 
@@ -32,7 +25,7 @@
       margin-bottom: 35px;
     }
 
-    .gallery-heading h2 {
+    .gallery-heading h1 {
       font-size: 30px;
       margin-bottom: 10px;
     }
@@ -62,12 +55,113 @@
     }
 
     /* Fotografia */
-    .gallery-card img {
+    .gallery-slideshow {
+      position: relative;
       width: 100%;
-      height: 280px;
-      display: block;
-      object-fit: cover;
       border-radius: 10px;
+    }
+
+    .gallery-slideshow img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: inherit;
+      cursor: zoom-in;
+    }
+
+    .gallery-slideshow img[hidden] {
+      display: none;
+    }
+
+    .gallery-slideshow img:focus-visible {
+      outline: 3px solid #64b6bf;
+      outline-offset: 3px;
+    }
+
+    .gallery-slideshow button {
+      position: absolute;
+      top: 50%;
+      z-index: 1;
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.88);
+      color: #29345f;
+      font: inherit;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+
+    .gallery-slideshow-prev {
+      left: 12px;
+    }
+
+    .gallery-slideshow-next {
+      right: 12px;
+    }
+
+    .event-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 72px;
+      background: rgba(10, 12, 20, 0.88);
+    }
+
+    .event-lightbox.is-open {
+      display: flex;
+    }
+
+    .event-lightbox img {
+      display: block;
+      max-width: 100%;
+      max-height: calc(100vh - 48px);
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .event-lightbox button {
+      position: absolute;
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      color: #29345f;
+      font: inherit;
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    .event-lightbox button:focus-visible {
+      outline: 3px solid #64b6bf;
+      outline-offset: 3px;
+    }
+
+    .event-lightbox-close {
+      top: 18px;
+      right: 18px;
+    }
+
+    .event-lightbox-prev {
+      top: 50%;
+      left: 18px;
+      transform: translateY(-50%);
+    }
+
+    .event-lightbox-next {
+      top: 50%;
+      right: 18px;
+      transform: translateY(-50%);
     }
 
     /* Texto ao lado da fotografia */
@@ -89,7 +183,7 @@
     }
 
     /* Inverter a posição em linhas alternadas */
-    .gallery-card:nth-child(even) img {
+    .gallery-card:nth-child(even) .gallery-slideshow {
       order: 2;
     }
 
@@ -109,11 +203,7 @@
         padding: 12px;
       }
 
-      .gallery-card img {
-        height: 230px;
-      }
-
-      .gallery-card:nth-child(even) img,
+      .gallery-card:nth-child(even) .gallery-slideshow,
       .gallery-card:nth-child(even) .gallery-card-content {
         order: initial;
       }
@@ -125,16 +215,48 @@
       .gallery-card-content h3 {
         font-size: 21px;
       }
+
+      .event-lightbox {
+        padding: 64px 16px;
+      }
+
+      .event-lightbox img {
+        max-height: calc(100vh - 128px);
+      }
+
+      .event-lightbox-prev {
+        left: 12px;
+      }
+
+      .event-lightbox-next {
+        right: 12px;
+      }
     }
   </style>
+  <link rel="stylesheet" href="subpages.css">
 </head>
 
-<body>
+<body class="subpage">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Magia das Cores — início">
+        <img src="logomdc.png" alt="Logótipo Magia das Cores" class="brand-logo">
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="index.html#inicio">Início</a>
+        <a href="index.html#servicos">Serviços</a>
+        <a href="index.html#identidade">Identidade</a>
+        <a href="index.html#conteudos">Conteúdos</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="index.html#servicos">Voltar ao site</a>
+    </div>
+  </header>
 
+  <main>
   <section class="gallery-section">
 
-    <div class="gallery-heading">
-      <h2>Os nossos momentos</h2>
+    <div class="gallery-heading page-heading">
+      <h1>Os nossos momentos</h1>
       <p>Descobre as experiências e atividades que temos para ti.</p>
     </div>
 
@@ -142,7 +264,13 @@
 
       <!-- Fotografia 1 -->
       <article class="gallery-card">
-        <img src="images/photo1.jpg" alt="Festa de aniversário">
+        <div class="gallery-slideshow" aria-label="Fotos de festas de aniversário">
+          <img src="flyer00.png" alt="Festas de aniversário" tabindex="0" role="button" aria-label="Abrir imagem: Festas de aniversário">
+          <img src="festa.jpg" alt="Festa com balões e crianças a celebrar" tabindex="0" role="button" aria-label="Abrir imagem: Festa com balões" hidden>
+          <img src="Atividades02.JPG" alt="Bolo de aniversário durante uma festa" tabindex="0" role="button" aria-label="Abrir imagem: Bolo de aniversário" hidden>
+          <button class="gallery-slideshow-prev" type="button" aria-label="Foto anterior">‹</button>
+          <button class="gallery-slideshow-next" type="button" aria-label="Foto seguinte">›</button>
+        </div>
 
         <div class="gallery-card-content">
           <h3>Festas de aniversário</h3>
@@ -156,10 +284,16 @@
 
       <!-- Fotografia 2 -->
       <article class="gallery-card">
-        <img src="images/photo2.jpg" alt="Atividades criativas">
+        <div class="gallery-slideshow" aria-label="Fotos dos dias escolares">
+          <img src="Atividades01.JPG" alt="Atividades criativas" tabindex="0" role="button" aria-label="Abrir imagem: Atividades criativas">
+          <img src="Brinquedos01.JPG" alt="Criança a participar numa brincadeira" tabindex="0" role="button" aria-label="Abrir imagem: Brincadeira" hidden>
+          <img src="Brinquedos03.JPG" alt="Crianças a jogar juntas" tabindex="0" role="button" aria-label="Abrir imagem: Jogo em grupo" hidden>
+          <button class="gallery-slideshow-prev" type="button" aria-label="Foto anterior">‹</button>
+          <button class="gallery-slideshow-next" type="button" aria-label="Foto seguinte">›</button>
+        </div>
 
         <div class="gallery-card-content">
-          <h3>Ateliês criativos</h3>
+          <h3>Dias Escolares</h3>
           <p>
             Damos asas à imaginação através de experiências
             artísticas, trabalhos manuais e atividades onde
@@ -170,10 +304,16 @@
 
       <!-- Fotografia 3 -->
       <article class="gallery-card">
-        <img src="images/photo3.jpg" alt="Decoração de festa">
+        <div class="gallery-slideshow" aria-label="Fotos de eventos especiais">
+          <img src="Decoracao01.JPG" alt="Decoração de festa" tabindex="0" role="button" aria-label="Abrir imagem: Decoração de festa">
+          <img src="Decoracao02.JPG" alt="Detalhes da decoração de um evento" tabindex="0" role="button" aria-label="Abrir imagem: Detalhes da decoração" hidden>
+          <img src="Lanche01.JPG" alt="Lanche servido num evento" tabindex="0" role="button" aria-label="Abrir imagem: Lanche do evento" hidden>
+          <button class="gallery-slideshow-prev" type="button" aria-label="Foto anterior">‹</button>
+          <button class="gallery-slideshow-next" type="button" aria-label="Foto seguinte">›</button>
+        </div>
 
         <div class="gallery-card-content">
-          <h3>Decoração personalizada</h3>
+          <h3>Eventos Especiais</h3>
           <p>
             Criamos ambientes cheios de cor e personalidade,
             com detalhes pensados para combinar com o tema
@@ -184,9 +324,93 @@
 
     </div>
   </section>
+  </main>
 
-</body>
-</html>
+  <div class="event-lightbox" id="eventLightbox" role="dialog" aria-modal="true" aria-label="Galeria de imagens" aria-hidden="true">
+    <button class="event-lightbox-close" type="button" aria-label="Fechar">×</button>
+    <button class="event-lightbox-prev" type="button" aria-label="Imagem anterior">‹</button>
+    <img src="" alt="">
+    <button class="event-lightbox-next" type="button" aria-label="Imagem seguinte">›</button>
+  </div>
 
+  <script>
+    (() => {
+      const slideshows = Array.from(document.querySelectorAll(".gallery-slideshow"));
+      const lightbox = document.getElementById("eventLightbox");
+      const lightboxImage = lightbox.querySelector("img");
+      const closeButton = lightbox.querySelector(".event-lightbox-close");
+      let activeSlideshow = null;
+      let activeIndex = 0;
+
+      const showImage = (index) => {
+        const images = Array.from(activeSlideshow.querySelectorAll("img"));
+        activeIndex = (index + images.length) % images.length;
+        activeSlideshow.dataset.activeIndex = String(activeIndex);
+        images.forEach((image, imageIndex) => {
+          image.hidden = imageIndex !== activeIndex;
+        });
+        lightboxImage.src = images[activeIndex].src;
+        lightboxImage.alt = images[activeIndex].alt;
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+      };
+
+      slideshows.forEach((slideshow) => {
+        const images = Array.from(slideshow.querySelectorAll("img"));
+        slideshow.dataset.activeIndex = "0";
+
+        const showCardImage = (index) => {
+          const currentIndex = (index + images.length) % images.length;
+          slideshow.dataset.activeIndex = String(currentIndex);
+          images.forEach((image, imageIndex) => {
+            image.hidden = imageIndex !== currentIndex;
+          });
+        };
+
+        const openLightbox = () => {
+          activeSlideshow = slideshow;
+          showImage(Number(slideshow.dataset.activeIndex));
+          lightbox.classList.add("is-open");
+          lightbox.setAttribute("aria-hidden", "false");
+          closeButton.focus();
+        };
+
+        slideshow.querySelector(".gallery-slideshow-prev").addEventListener("click", () => {
+          showCardImage(Number(slideshow.dataset.activeIndex) - 1);
+        });
+        slideshow.querySelector(".gallery-slideshow-next").addEventListener("click", () => {
+          showCardImage(Number(slideshow.dataset.activeIndex) + 1);
+        });
+
+        images.forEach((image) => {
+          image.addEventListener("click", openLightbox);
+          image.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              openLightbox();
+            }
+          });
+        });
+      });
+
+      lightbox.querySelector(".event-lightbox-prev").addEventListener("click", () => showImage(activeIndex - 1));
+      lightbox.querySelector(".event-lightbox-next").addEventListener("click", () => showImage(activeIndex + 1));
+      closeButton.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (!lightbox.classList.contains("is-open")) return;
+        if (event.key === "Escape") closeLightbox();
+        if (event.key === "ArrowLeft") showImage(activeIndex - 1);
+        if (event.key === "ArrowRight") showImage(activeIndex + 1);
+      });
+    })();
+  </script>
 </body>
 </html>
