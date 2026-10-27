@@ -976,6 +976,22 @@ button {
   filter: saturate(1.03) contrast(0.98);
 }
 
+.flip-back--slideshow img {
+  position: absolute;
+  inset: 0;
+}
+
+.flip-back--slideshow img:nth-child(2) {
+  opacity: 0;
+  animation: flip-back-photo-crossfade 8s ease-in-out infinite;
+}
+
+@keyframes flip-back-photo-crossfade {
+  0%, 40% { opacity: 0; }
+  50%, 90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 .card-icon {
   display: grid;
   width: 48px;
@@ -1249,13 +1265,19 @@ button {
 
 .value-icon {
   display: grid;
-  width: 55px;
-  height: 55px;
+  width: 72px;
+  height: 72px;
   margin: 0 auto 8px;
   place-items: center;
   border-radius: 18px;
   background: #f9e4f1;
   font-size: 1.5rem;
+}
+
+.value-icon img {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
 }
 
 .value:nth-child(2) .value-icon {
@@ -1439,6 +1461,18 @@ button {
 
 .service:nth-child(4) .service-icon {
   background: #45b8c2;
+}
+
+.service-icon img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.service:nth-child(2) .service-icon img,
+.service:nth-child(3) .service-icon img {
+  width: 88px;
+  height: 88px;
 }
 
 .service h3 {
@@ -2392,9 +2426,9 @@ button {
         <p>A Magia das Cores apresenta uma variedade de serviços de animação infantil, festas temáticas e atividades para criar momentos especiais.</p></div>
         
         <div class="services-grid">
-        <article class="service"><div class="service-icon"> </div><h3>Festas de aniversário</h3><p>Uma celebração cheia de brincadeiras, surpresas e memórias.</p><br><b></b><div class="service-feature"><a href="packbrilhante.html" class="btn btn-primary btn-small">Ver pacote</a></div></article>
-        <article class="service"><div class="service-icon"> </div><h3>Animação infantil</h3><p>Atividades divertidas que convidam a brincar e participar.</p><br><div class="service-feature"><a href="aniinfantil.html" class="btn btn-primary btn-small">Ver imagens</a></div></article>
-        <article class="service"><div class="service-icon"> </div><h3>Eventos especiais</h3><p>Momentos temáticos para assinalar dias especiais.</p><br><div class="service-feature"><a href="eventos.html" class="btn btn-primary btn-small">Ver mais</a></div></article>
+        <article class="service"><div class="service-icon"><img src="pinkb.png" alt="Balão cor-de-rosa"></div><h3>Festas de aniversário</h3><p>Uma celebração cheia de brincadeiras, surpresas e memórias.</p><br><b></b><div class="service-feature"><a href="packbrilhante.html" class="btn btn-primary btn-small">Ver pacote</a></div></article>
+        <article class="service"><div class="service-icon"><img src="presente.png" alt="Presente azul"></div><h3>Animação infantil</h3><p>Atividades divertidas que convidam a brincar e participar.</p><br><div class="service-feature"><a href="aniinfantil.html" class="btn btn-primary btn-small">Ver imagens</a></div></article>
+        <article class="service"><div class="service-icon"><img src="bolo.png" alt="Bolo de aniversário"></div><h3>Eventos especiais</h3><p>Momentos temáticos para assinalar dias especiais.</p><br><div class="service-feature"><a href="eventos.html" class="btn btn-primary btn-small">Ver mais</a></div></article>
         <p style="text-align:center;color:#77708a;font-size:.85rem;margin:22px 0 0">
       </div>
     </section>
@@ -2416,8 +2450,9 @@ button {
                 </ul>
                 <span class="audience-tag">Público secundário: crianças</span>
               </div>
-              <div class="flip-back" aria-hidden="true">
-                <img src="festa.jpg" alt="Crianças a brincar numa festa">
+              <div class="flip-back flip-back--slideshow" aria-hidden="true">
+                <img src="capturar12.jpg" alt="Crianças a brincar numa festa">
+                <img src="Capturar09.JPG" alt="Atividade de pinturas faciais">
               </div>
             </div>
           </article>
@@ -2441,8 +2476,9 @@ button {
                 
                 <span class="audience-tag">Público primário: pais/encarregados</span>
               </div>
-              <div class="flip-back" aria-hidden="true">
-                <img src="roupas.jpg" alt="Detalhes e roupas do evento">
+              <div class="flip-back flip-back--slideshow" aria-hidden="true">
+                <img src="capturar11.jpg" alt="Detalhes e roupas do evento">
+                <img src="Capturar10.JPG" alt="Atividade de pinturas faciais">
               </div>
             </div>
           </article>
@@ -2463,8 +2499,9 @@ button {
                 
                 <span class="audience-tag">Emoção + confiança</span>
               </div>
-              <div class="flip-back" aria-hidden="true">
-                <img src="giz.jpg" alt="Detalhes coloridos e materiais criativos">
+              <div class="flip-back flip-back--slideshow" aria-hidden="true">
+                <img src="capturar14.jpg" alt="Detalhes coloridos e materiais criativos">
+                <img src="Capturar07.JPG" alt="Atividade de pinturas faciais">
               </div>
             </div>
           </article>
@@ -2477,7 +2514,7 @@ button {
       <div class="container"><div class="section-head"><span class="eyebrow">04 · Presença digital</span><h2>Conteúdos que mostram a experiência.</h2><p>As redes sociais funcionam como uma montra digital: ajudam a mostrar o espaço, as atividades e os momentos que tornam a experiência especial.</p></div>
       <br> 
       <div class="social-layout"><article class="social-card"><h3><span style="font-size:1.5rem"> </span> Redes sociais e marketing digital</h3>
-          <p>O Instagram é particularmente relevante para uma marca visual como a Magia das Cores. A consistência das cores, tipografia e elementos gráficos ajuda a tornar o perfil reconhecível e único.</p>
+          <p>O Instagram é particularmente relevante para uma marca visual como a Magia das Cores. <br> A consistência das cores, tipografia e elementos gráficos ajuda a tornar o perfil reconhecível e único.</p>
 <br>
         <!--TA AQUI O BOTAO CRLH-->
           <a
@@ -2498,18 +2535,18 @@ button {
               </div>
             </div>
             <div class="instagram-posts" aria-label="Exemplos de publicações">
-              <img src="festa.jpg" alt="Decoração colorida para uma festa">
-              <img src="festa1.jpg" alt="Atividade divertida numa festa">
-              <img src="espaçovasio.jpg" alt="Espaço preparado para uma celebração">
-              <img src="footbal.jpg" alt="Atividade desportiva infantil">
-              <img src="roupas.jpg" alt="Figurinos e acessórios para animação">
-              <img src="giz.jpg" alt="Materiais para uma atividade criativa">
-              <img src="footbal.jpg" alt="Atividade desportiva infantil">
-              <img src="roupas.jpg" alt="Figurinos e acessórios para animação">
-              <img src="giz.jpg" alt="Materiais para uma atividade criativa">
-              <img src="footbal.jpg" alt="Atividade desportiva infantil">
-              <img src="roupas.jpg" alt="Figurinos e acessórios para animação">
-              <img src="giz.jpg" alt="Materiais para uma atividade criativa">
+              <img src="capturar.jpg" alt="Decoração colorida para uma festa">
+              <img src="capturar00.jpg" alt="Atividade divertida numa festa">
+              <img src="capturar01.jpg" alt="Espaço preparado para uma celebração">
+              <img src="capturar02.jpg" alt="Atividade desportiva infantil">
+              <img src="capturar03.jpg" alt="Figurinos e acessórios para animação">
+              <img src="capturar04.jpg" alt="Materiais para uma atividade criativa">
+              <img src="capturar05.jpg" alt="Atividade desportiva infantil">
+              <img src="capturar06.jpg" alt="Figurinos e acessórios para animação">
+              <img src="capturar07.jpg" alt="Materiais para uma atividade criativa">
+              <img src="capturar08.jpg" alt="Atividade desportiva infantil">
+              <img src="capturar09.jpg" alt="Figurinos e acessórios para animação">
+              <img src="capturar10.jpg" alt="Materiais para uma atividade criativa">
             </div>
           </section>
         
@@ -2532,7 +2569,7 @@ button {
     <section class="section identity-section" id="identidade">
       <div class="container"><div class="section-head"><span class="eyebrow">05 · Universo da marca</span><h2>Uma identidade que se reconhece à primeira.</h2><p>A identidade visual reúne os elementos gráficos que tornam a Magia das Cores reconhecível: logótipo, cores, tipografia, ilustrações, cartazes, flyers, redes sociais e materiais promocionais.</p></div>
         <div class="identity-grid">
-          <article class="identity-panel"><h3>Os valores da Magia das Cores</h3><p>O nome evoca fantasia, imaginação e cor, ideias associadas ao universo infantil e às experiências que a marca pretende proporcionar às crianças e às suas famílias.</p><div class="values-grid"><div class="value"><div class="value-icon"> </div><strong>Diversão</strong></div><div class="value"><div class="value-icon"> </div><strong>Criatividade</strong></div><div class="value"><div class="value-icon"> </div><strong>Alegria</strong></div><div class="value"><div class="value-icon"> </div><strong>Segurança</strong></div><div class="value"><div class="value-icon"> </div><strong>Momentos especiais</strong></div></div></article>
+          <article class="identity-panel"><h3>Os valores da Magia das Cores</h3><p>O nome evoca fantasia, imaginação e cor, ideias associadas ao universo infantil e às experiências que a marca pretende proporcionar às crianças e às suas famílias.</p><div class="values-grid"><div class="value"><div class="value-icon"><img src="bola.png" alt=""></div><strong>Diversão</strong></div><div class="value"><div class="value-icon"><img src="pincel.png" alt=""></div><strong>Criatividade</strong></div><div class="value"><div class="value-icon"><img src="balao.png" alt=""></div><strong>Alegria</strong></div><div class="value"><div class="value-icon"><img src="doce.png" alt=""></div><strong>Momentos especiais</strong></div><div class="value"><div class="value-icon"><img src="cartola.png" alt=""></div><strong>Segurança</strong></div></div></article>
           
           <article class="identity-panel"><h3>Tipografia com personalidade</h3><p>Uma tipografia arredondada, amigável e divertida combina com o público infantil e transmite proximidade. O nome da marca pode usar letras mais descontraídas, enquanto os textos informativos devem privilegiar uma leitura simples e confortável.</p>
             <div class="type-samples">
@@ -2629,6 +2666,10 @@ button {
     04 mudar fotos layout insta
     05 icons nos valores converter imagens, fiz no big gap
     06 galeria
+
+    1 semana left é crazy
+
+    falta importar conteudos
     -->
 
     <!-- vais levae com o pé NAO O FOOTER NO CU-->
@@ -2842,4 +2883,3 @@ a quem ja faz sites no pre historico mas mitico github,
 e agradeço a anasofia e a jessica por terem paciencia comigo enquanto me tripava no codigo
 e já agora 
 FODA SE WORDPRESS -lurdes -->
-
