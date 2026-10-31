@@ -24,6 +24,7 @@
         .lb.is-open{display:flex}
         .lb-inner{max-width:900px;width:100%;background:#fff;border-radius:12px;overflow:hidden;position:relative}
         .lb-inner img{width:100%;height:auto;display:block}
+        .lb-description{margin:0;padding:16px 20px 20px;color:#65708a;line-height:1.6}
         .lb-close{position:absolute;right:14px;top:14px;background:#fff;border:0;padding:8px 10px;border-radius:8px;font-weight:900}
         .logo-sizes{margin-top:48px}
         .logo-sizes h2{margin:0 0 8px}
@@ -43,6 +44,7 @@
         @media(max-width:600px){.logo-sizes{margin-top:36px}.logo-size-table{min-width:650px}}
     </style>
     <link rel="stylesheet" href="subpages.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 <body class="subpage">
     <header class="site-header">
@@ -66,16 +68,16 @@
         </div>
 
         <div class="grid">
-            <div class="tile"><img src="logoblack.png" alt="Logótipo Magia das Cores em preto"><div class="label">Versão preta</div></div>
-            <div class="tile"><img src="logojustcores.png" alt="Logótipo Magia das Cores com as palavras just cores"><div class="label">Versão “Just Cores”</div></div>
-            <div class="tile"><img src="logomdc.png" alt="Logótipo principal Magia das Cores"><div class="label">Logótipo principal</div></div>
-            <div class="tile"><img src="logoog.png" alt="Logótipo original Magia das Cores"><div class="label">Logótipo original</div></div>
-            <div class="tile"><img src="logored.png" alt="Logótipo Magia das Cores em vermelho"><div class="label">Versão vermelha</div></div>
-            <div class="tile"><img src="logoblueb.png" alt="Logótipo Magia das Cores com balão azul"><div class="label">Versão com balão azul</div></div>
-            <div class="tile"><img src="logogreenb.png" alt="Logótipo Magia das Cores com balão verde"><div class="label">Versão com balão verde</div></div>
-            <div class="tile"><img src="logoblue.png" alt="Logótipo Magia das Cores em azul"><div class="label">Versão azul</div></div>
-            <div class="tile"><img src="logoredb.png" alt="Logótipo Magia das Cores com balão vermelho"><div class="label">Versão com balão vermelho</div></div>
-            <div class="tile"><img src="logowhite.png" alt="Logótipo Magia das Cores em branco"><div class="label">Versão branca</div></div>
+            <div class="tile"><img src="logoblack.png" alt="Logótipo Magia das Cores em preto" data-application="A versão monocromática funciona bem em documentos, carimbos e impressões a uma só cor."><div class="label">Versão preta</div></div>
+            <div class="tile"><img src="logojustcores.png" alt="Logótipo Magia das Cores com as palavras just cores" data-application="Esta variante pode ser usada em campanhas e publicações focadas na cor, em títulos de materiais promocionais e em elementos gráficos da marca."><div class="label">Versão “Just Cores”</div></div>
+            <div class="tile"><img src="logomdc.png" alt="Logótipo principal Magia das Cores" data-application="A versão principal é indicada para o website, redes sociais, cartazes, convites e outros materiais institucionais da marca."><div class="label">Logótipo principal</div></div>
+            <div class="tile"><img src="logoog.png" alt="Logótipo original Magia das Cores" data-application="A versão original pode ser aplicada em materiais de arquivo, peças que preservem a identidade de origem e conteúdos que apresentem a história da marca."><div class="label">Logótipo original</div></div>
+            <div class="tile"><img src="logored.png" alt="Logótipo Magia das Cores em vermelho" data-application="A versão vermelha destaca-se em cartazes, publicações promocionais e fundos claros, quando se pretende dar mais energia a uma mensagem."><div class="label">Versão vermelha</div></div>
+            <div class="tile"><img src="logoblueb.png" alt="Logótipo Magia das Cores com balão azul" data-application="A variante com balão azul pode identificar materiais de atividades, convites e publicações com uma composição leve e festiva."><div class="label">Versão com balão azul</div></div>
+            <div class="tile"><img src="logogreenb.png" alt="Logótipo Magia das Cores com balão verde" data-application="A variante com balão verde adapta-se a materiais de atividades, sinalética e publicações que beneficiem de um apontamento de cor diferente."><div class="label">Versão com balão verde</div></div>
+            <div class="tile"><img src="logoblue.png" alt="Logótipo Magia das Cores em azul" data-application="A versão azul oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão azul</div></div>
+            <div class="tile"><img src="logoredb.png" alt="Logótipo Magia das Cores com balão vermelho" data-application="A variante com balão vermelho pode dar destaque a anúncios de festas, promoções e materiais impressos sobre fundos claros."><div class="label">Versão com balão vermelho</div></div>
+            <div class="tile"><img src="logowhite.png" alt="Logótipo Magia das Cores em branco" data-application="A versão branca foi pensada para fundos escuros, como fotografias, capas de redes sociais, vídeos e sinalética."><div class="label">Versão branca</div></div>
         </div>
 
         <section class="logo-sizes" aria-labelledby="logo-sizes-title">
@@ -158,10 +160,37 @@
         </section>
     </main>
 
-    <div id="lightbox" class="lb" role="dialog" aria-hidden="true">
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand-block">
+                <a class="footer-brand" href="index.html#inicio" aria-label="Magia das Cores — início"><img src="logomdc.png" alt="Logótipo Magia das Cores"></a>
+                <p class="footer-tagline">“Onde a Magia ganha mais Cor!”<br>Momentos especiais, cheios de imaginação.</p>
+            </div>
+            <div>
+                <h2 class="footer-heading">Explora</h2>
+                <nav class="footer-links" aria-label="Navegação do rodapé">
+                    <a href="index.html#inicio">Início</a><a href="index.html#servicos">Serviços</a>
+                    <a href="index.html#identidade">Universo da marca</a><a href="index.html#conteudos">Redes sociais</a>
+                </nav>
+            </div>
+            <div class="footer-social">
+                <h2 class="footer-heading">Descobre mais</h2>
+                <nav class="footer-links" aria-label="Mais páginas">
+                    <a href="aniinfantil.html">Galeria de fotografias</a><a href="elementos.html">Elementos gráficos</a>
+                    <a href="eventos.html">Eventos especiais</a><a href="packbrilhante.html">Pack Brilhante</a>
+                </nav>
+                <p style="margin-top:16px">Acompanha as novidades e os momentos da marca.</p>
+                <a class="footer-instagram" href="https://www.instagram.com/festas.magiadascores" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            </div>
+        </div>
+        <div class="container footer-bottom"><p>© 2026 Magia das Cores · Showcase multimédia</p><p>Feito com cor e imaginação.</p></div>
+    </footer>
+
+    <div id="lightbox" class="lb" role="dialog" aria-label="Pré-visualização do logótipo" aria-describedby="lbDescription" aria-hidden="true">
         <div class="lb-inner">
             <button class="lb-close" id="lbClose">✕</button>
             <img id="lbImg" src="" alt="Ampliação">
+            <p class="lb-description" id="lbDescription"></p>
         </div>
     </div>
 
@@ -170,13 +199,24 @@
             const imgs = document.querySelectorAll('.tile img');
             const lb = document.getElementById('lightbox');
             const lbImg = document.getElementById('lbImg');
+            const lbDescription = document.getElementById('lbDescription');
             const lbClose = document.getElementById('lbClose');
             imgs.forEach(i => i.addEventListener('click', ()=>{
-                lbImg.src = i.src; lb.classList.add('is-open'); lb.setAttribute('aria-hidden','false');
+                lbImg.src = i.src;
+                lbImg.alt = i.alt;
+                lbDescription.textContent = i.dataset.application;
+                lb.classList.add('is-open');
+                lb.setAttribute('aria-hidden','false');
             }));
-            lbClose.addEventListener('click', ()=>{ lb.classList.remove('is-open'); lb.setAttribute('aria-hidden','true'); lbImg.src='';});
-            lb.addEventListener('click',(e)=>{ if(e.target===lb){ lb.classList.remove('is-open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; } });
-            document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape'){ lb.classList.remove('is-open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; } });
+            const closeLightbox = () => {
+                lb.classList.remove('is-open');
+                lb.setAttribute('aria-hidden','true');
+                lbImg.src='';
+                lbDescription.textContent='';
+            };
+            lbClose.addEventListener('click', closeLightbox);
+            lb.addEventListener('click',(e)=>{ if(e.target===lb) closeLightbox(); });
+            document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLightbox(); });
         })();
     </script>
 </body>

@@ -20,10 +20,11 @@
         .gallery-category{margin:34px 0}
         .gallery-category h2{margin:0 0 14px}
         .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:22px 0}
+        .category-description{max-width:850px;margin:18px 0 0;padding:14px 18px;border-left:4px solid var(--blue);border-radius:0 10px 10px 0;background:#f3faf9;color:#526078;line-height:1.65}
         .gallery-category--large-art .gallery-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
         .gallery-category--large-art .tile img{height:300px;padding:12px}
         .gallery-category[aria-labelledby="mascots-title"] .tile img[src="mascoteolawhite.png"]{transform:scale(0.9)}
-        .gallery-category[aria-labelledby="illustrations-title"] .tile.dark-art img{transform:scale(0.5)}
+        .gallery-category--illustrations .tile.dark-art img{transform:scale(0.5)}
         .tile{position:relative;overflow:hidden;border-radius:12px;background:#fff;border:1px solid #f0e8f4;box-shadow:var(--shadow)}
         .tile img{width:100%;height:220px;object-fit:contain;display:block;padding:18px}
         .tile.dark-art{background:#29345f;border-color:#29345f}
@@ -45,6 +46,7 @@
         .lb-close{position:absolute;right:14px;top:14px;background:#fff;border:0;padding:8px 10px;border-radius:8px;font-weight:900}
     </style>
     <link rel="stylesheet" href="subpages.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 <body class="subpage">
     <header class="site-header">
@@ -64,11 +66,13 @@
     <main class="container">
         <div class="page-heading">
             <h1>Galeria de elementos gráficos</h1>
-            <p>Explora balões, mascotes e ilustrações do projeto.</p>
+            <p>O desenvolvimento dos designs começou com a exploração da identidade da Magia das Cores e do universo infantil da marca. A partir dessa pesquisa, foram criados padrões, cores, mascotes e ilustrações, depois adaptados para formar um conjunto visual coerente e reconhecível em diferentes materiais de comunicação.</p>
         </div>
 
-        <section class="gallery-category" aria-labelledby="balloons-title">
-            <h2 id="balloons-title">Padrões</h2>
+        <br>
+
+        <section class="gallery-category" aria-labelledby="patterns-title">
+            <h2 id="patterns-title">Padrões</h2>
             <div class="gallery-grid">
                 <div class="tile"><img src="padrao01.png" alt="Padrao01"><div class="label">Padrão Principal</div></div>
                 <div class="tile"><img src="padrao02.png" alt="Padrao02"><div class="label">Padrão Secundário</div></div>
@@ -76,6 +80,7 @@
                 <div class="tile"><img src="padrao04.png" alt="Padrao04"><div class="label">Padrão Quaternário</div></div>
                 
             </div>
+            <p class="category-description">Os padrões dão continuidade visual às peças da marca e ajudam a tornar as publicações, os cartazes e os convites imediatamente reconhecíveis. No dia a dia, podem ser aplicados em fundos, embalagens e decoração de festas sem competir com as fotografias ou com a informação principal.</p>
         </section>
 <br>
         <section class="gallery-category" aria-labelledby="balloons-title">
@@ -87,22 +92,23 @@
                 <div class="tile"><img src="verdeb.png" alt="Balão verde"><div class="label">Balão verde</div></div>
                 <div class="tile"><img src="yellowb.png" alt="Balão amarelo"><div class="label">Balão amarelo</div></div>
             </div>
+            <p class="category-description">Os balões introduzem cor e um elemento festivo que chama a atenção em anúncios, stories e materiais promocionais. As suas diferentes cores também podem orientar a decoração de espaços, mesas e atividades, mantendo a ligação visual à identidade da marca.</p>
         </section>
 <br>
         <section class="gallery-category gallery-category--large-art" aria-labelledby="mascots-title">
             <h2 id="mascots-title">Mascotes Magu</h2>
             <div class="gallery-grid">
                 <div class="tile"><img src="magu.png" alt="Mascote Magu"><div class="label">Magu</div></div>
-                <div class="tile dark-art"><img src="Maguwhite.png" alt="Mascote Magu em branco"><div class="label">Magu branco</div></div>
+                <div class="tile dark-art"><img src="maguwhite.png" alt="Mascote Magu em branco"><div class="label">Magu branco</div></div>
                 <div class="tile"><img src="maguheart.png" alt="Magu com coração"><div class="label">Magu com coração</div></div>
                 <div class="tile dark-art"><img src="maguheartwhite.png" alt="Magu com coração em branco"><div class="label">Magu com coração branco</div></div>
                 <div class="tile"><img src="magupisca.png" alt="Magu a piscar o olho"><div class="label">Magu a piscar</div></div>
                 <div class="tile dark-art"><img src="magupiscawhite.png" alt="Magu a piscar em branco"><div class="label">Magu a piscar - versão branca</div></div>
                 <div class="tile"><img src="magustar.png" alt="Magu com estrelas nos olhos"><div class="label">Magu com estrelas</div></div>
                 <div class="tile dark-art"><img src="magustarwhite.png" alt="Magu com estrelas nos olhos em branco"><div class="label">Magu com estrelas - versão branca</div></div>
-                <div class="tile"><img src="Mascote.png" alt="Magu"><div class="label">Magu</div></div>
+                <div class="tile"><img src="mascote.png" alt="Magu"><div class="label">Magu</div></div>
                 <div class="tile dark-art"><img src="mascotewhite.png" alt="Magu em branco"><div class="label">Magu - versão branca</div></div>
-                <div class="tile"><img src="Mascoteola.png" alt="Magu"><div class="label">Magu pose</div></div>
+                <div class="tile"><img src="mascoteola.png" alt="Magu"><div class="label">Magu pose</div></div>
                 <div class="tile dark-art"><img src="mascoteolawhite.png" alt="Magu pose em branco"><div class="label">Magu pose - versão branca</div></div>
                 <div class="tile"><img src="mynameis.png" alt="Magu"><div class="label">Magu diz: 'O meu nome é Magu!'</div></div>
                 <div class="tile"><img src="boy.png" alt="Magu"><div class="label">Magu Menino</div></div>
@@ -110,9 +116,10 @@
                 
                 
             </div>
+            <p class="category-description">A mascote Magu aproxima a marca das crianças e torna a comunicação mais expressiva e memorável. Pode surgir em publicações, cartazes, convites e materiais das atividades, além de dar vida à decoração e à sinalética em festas e eventos.</p>
         </section>
 <br>
-        <section class="gallery-category gallery-category--large-art" aria-labelledby="illustrations-title">
+        <section class="gallery-category gallery-category--large-art gallery-category--illustrations" aria-labelledby="illustrations-title">
             <h2 id="illustrations-title">Ícones e ilustrações</h2>
             <div class="gallery-grid">
                 <div class="tile"><img src="balao.png" alt="Ilustração de um balão"><div class="label">Balão</div></div>
@@ -131,11 +138,12 @@
                 <div class="tile dark-art"><img src="presentebranco.png" alt="Presente em branco"><div class="label">Presente — versão branca</div></div>
 
             </div>
+            <p class="category-description">Os ícones representam serviços e objetos do universo das festas de forma simples e rápida de compreender. Em anúncios e redes sociais, ajudam a destacar informações e organizar conteúdos; impressos em materiais ou usados na decoração, mantêm a mesma linguagem visual também fora do ecrã.</p>
         </section>
 <br>
-        <section class="gallery-category gallery-category--large-art" aria-labelledby="illustrations-title">
-            <h2 id="illustrations-title">Jogos e atividades</h2>
-            <h2 id="illustrations-title">Twister</h2>
+        <section class="gallery-category gallery-category--large-art gallery-category--illustrations" aria-labelledby="games-title">
+            <h2 id="games-title">Jogos e atividades</h2>
+            <h2 id="twister-title">Twister</h2>
             <div class="gallery-grid">
                 <div class="tile"><img src="twister.png" alt="Ilustração de um balão"><div class="label">Twister</div></div>
                 <div class="tile"><img src="twistamarelo.png" alt="Ilustração de uma bola"><div class="label">Bola</div></div>
@@ -145,25 +153,54 @@
                 <div class="tile"><img src="twistazul.png" alt="Ilustração de um doce"><div class="label">Doce</div></div>
                 
             </div>
+            <p class="category-description">As peças do Twister dão identidade visual a uma atividade participativa e divertida. A sua apresentação em publicações e cartazes ajuda a divulgar a brincadeira, enquanto os elementos gráficos podem ser usados na preparação do jogo e na decoração de festas.</p>
         </section>
 
-        <section class="gallery-category gallery-category--large-art" aria-labelledby="illustrations-title">
-            <h2 id="illustrations-title">Jogo da Macaca</h2>
+        <section class="gallery-category gallery-category--large-art gallery-category--illustrations" aria-labelledby="hopscotch-title">
+            <h2 id="hopscotch-title">Jogo da Macaca</h2>
             <div class="gallery-grid">
                 <div class="tile"><img src="macaca1.png" alt="Ilustração de um balão"><div class="label">Jogo da Macaca</div></div>
                 <div class="tile"><img src="macaca2.png" alt="Ilustração de um balão"><div class="label">Jogo da Macaca</div></div>
             </div>
+            <p class="category-description">O jogo da macaca comunica movimento, brincadeira e participação. É um tema apelativo para promover atividades nas redes sociais e em cartazes e pode ser levado diretamente para o espaço da festa, com marcações no chão e uma zona preparada para brincar.</p>
         </section>
 
-        <section class="gallery-category gallery-category--large-art" aria-labelledby="illustrations-title">
-            <h2 id="illustrations-title">Kokas</h2>
+        <section class="gallery-category gallery-category--large-art gallery-category--illustrations" aria-labelledby="kokas-title">
+            <h2 id="kokas-title">Kokas</h2>
             <div class="gallery-grid">
                 <div class="tile"><img src="kokas.png" alt="Ilustração de um balão"><div class="label">Kokas</div></div>
                 
             </div>
+            <p class="category-description">As ilustrações Kokas acrescentam uma referência própria e divertida à comunicação da marca. Podem ser usadas como destaque em publicações, stories e materiais promocionais e aplicadas em impressões ou elementos decorativos para criar pontos de interesse em eventos.</p>
         </section>
 
     </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand-block">
+                <a class="footer-brand" href="index.html#inicio" aria-label="Magia das Cores — início"><img src="logomdc.png" alt="Logótipo Magia das Cores"></a>
+                <p class="footer-tagline">“Onde a Magia ganha mais Cor!”<br>Momentos especiais, cheios de imaginação.</p>
+            </div>
+            <div>
+                <h2 class="footer-heading">Explora</h2>
+                <nav class="footer-links" aria-label="Navegação do rodapé">
+                    <a href="index.html#inicio">Início</a><a href="index.html#servicos">Serviços</a>
+                    <a href="index.html#identidade">Universo da marca</a><a href="index.html#conteudos">Redes sociais</a>
+                </nav>
+            </div>
+            <div class="footer-social">
+                <h2 class="footer-heading">Descobre mais</h2>
+                <nav class="footer-links" aria-label="Mais páginas">
+                    <a href="aniinfantil.html">Galeria de fotografias</a><a href="eventos.html">Eventos especiais</a>
+                    <a href="packbrilhante.html">Pack Brilhante</a><a href="logo.html">Galeria de logótipos</a>
+                </nav>
+                <p style="margin-top:16px">Acompanha as novidades e os momentos da marca.</p>
+                <a class="footer-instagram" href="https://www.instagram.com/festas.magiadascores" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            </div>
+        </div>
+        <div class="container footer-bottom"><p>© 2026 Magia das Cores · Showcase multimédia</p><p>Feito com cor e imaginação.</p></div>
+    </footer>
 
     <div id="lightbox" class="lb" role="dialog" aria-hidden="true">
         <div class="lb-inner">

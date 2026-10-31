@@ -422,22 +422,14 @@ button {
   box-shadow: 0 7px 22px rgba(100,182,191,0.08);
 }
 
-.hero h1 {
+.hero-logo {
   margin: 16px 0 8px;
 }
 
-.hero h1 .line-one {
+.hero-logo img {
   display: block;
-  color: var(--pink);
-}
-
-.hero h1 .line-two {
-  display: block;
-  color: var(--blue);
-}
-
-.hero h1 .line-two span {
-  color: var(--orange);
+  width: min(100%, 340px);
+  height: auto;
 }
 
 .hero-tagline {
@@ -700,7 +692,37 @@ button {
 /* 9. ABOUT SECT */
 
 .about-section {
-  background: linear-gradient(120deg, #eaf9fc, #fff 72%);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(245,177,208,0.2), transparent 22%),
+    radial-gradient(circle at 86% 76%, rgba(100,182,191,0.2), transparent 25%),
+    linear-gradient(120deg, #eaf9fc, #fff 72%);
+}
+
+.about-section::before,
+.about-section::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+}
+
+.about-section::before {
+  inset: 0;
+  background: url("padrao01.png") repeat;
+  background-size: 190px;
+  opacity: 0.07;
+}
+
+.about-section::after {
+  top: 10%;
+  right: 4%;
+  width: 100%;
+  height: 80%;
+  background: url("bola.png") left 3% bottom 8% / 76px auto no-repeat;
+  opacity: 0.17;
 }
 
 .about-grid {
@@ -1049,6 +1071,20 @@ button {
 
 /*11. CALENDARARIO */
 
+.social-section {
+  isolation: isolate;
+}
+
+.social-section::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: url("padrao03.png") center / cover no-repeat;
+  content: "";
+  opacity: 0.07;
+  pointer-events: none;
+}
+
 .social-layout {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -1215,6 +1251,22 @@ button {
 
 .closing-note > div:last-child {
   max-width: 760px;
+}
+
+.closing-section {
+  background: linear-gradient(135deg, #fff7fa, #effbfc);
+}
+
+.closing-section .intro-grid {
+  gap: 24px;
+}
+
+.closing-section .intro-item {
+  padding: 28px;
+  border: 1px solid #eee3f2;
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
 }
 
 .calendar-content span {
@@ -1475,6 +1527,96 @@ button {
   height: 88px;
 }
 
+.service:first-child .service-icon {
+  width: 96px;
+  height: 96px;
+}
+
+.service:first-child .service-icon img {
+  width: 88px;
+  height: 88px;
+}
+
+.audience-section {
+  isolation: isolate;
+}
+
+.audience-section::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: url("padrao02.png") center / cover no-repeat;
+  content: "";
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.post-recipe-button {
+  position: relative;
+  z-index: 3;
+  align-self: stretch;
+  margin-top: 12px;
+}
+
+.audience-card-with-action {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.post-recipe-dialog {
+  width: min(520px, calc(100% - 32px));
+  max-width: none;
+  padding: 28px;
+  border: 0;
+  border-radius: 24px;
+  color: var(--ink);
+  background: var(--white);
+  box-shadow: 0 24px 80px rgba(41,52,95,0.28);
+}
+
+.post-recipe-dialog::backdrop {
+  background: rgba(41,52,95,0.58);
+  backdrop-filter: blur(4px);
+}
+
+.post-recipe-dialog h2 {
+  margin: 0 42px 10px 0;
+}
+
+.post-recipe-dialog p {
+  color: var(--muted);
+}
+
+.post-recipe-dialog dl {
+  margin: 20px 0 0;
+}
+
+.post-recipe-dialog dt {
+  margin-top: 14px;
+  color: var(--purple-dark);
+  font-weight: 900;
+}
+
+.post-recipe-dialog dd {
+  margin: 3px 0 0;
+  color: var(--muted);
+}
+
+.post-recipe-dialog-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--ink);
+  background: #edf7f8;
+  font-size: 1.2rem;
+}
+
 .service h3 {
   margin-bottom: 8px;
   font-size: 1.25rem;
@@ -1711,7 +1853,22 @@ button {
 /* 16. LOGo DESTAQUE */
 
 .logo-section {
-  background: #f9f5ff;
+  grid-column: 1 / -1;
+  padding: 30px;
+  border: 1px solid #f0e8ed;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #f9f5ff, #fff);
+  box-shadow: 0 10px 35px #58317908;
+}
+
+.logo-section > h3 {
+  margin-bottom: 8px;
+}
+
+.logo-section > p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--muted);
 }
 
 .logo-comparison {
@@ -2101,6 +2258,10 @@ button {
     text-align: center;
   }
 
+  .hero-logo img {
+    margin-inline: auto;
+  }
+
   .hero-copy > p {
     margin-inline: auto;
   }
@@ -2323,6 +2484,7 @@ button {
 </style>
 
 <!--/*DAMM DANIEL*//*THAT SUCKED*/USUCK-->
+<link rel="stylesheet" href="footer.css">
   
 </head>
 <body>
@@ -2350,7 +2512,7 @@ button {
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">✦ Showcase multimédia · 2026</span>
-          <h1><span class="line-one">MAGIA</span><span class="line-two">DAS <span>CORES</span></span></h1>
+          <h1 class="hero-logo"><img src="logomdc.png" alt="Magia das Cores"></h1>
             
           <!--HMM YES I SMELL EASY*-->
           
@@ -2371,7 +2533,7 @@ button {
                 <img src="festa.jpg" alt="Festa da Magia das Cores">
               </div>
               <div class="photo-slide">
-                <img src=".jpg" alt="linha2374">
+                <img src="vazio.jpg" alt="pq nao das">
               </div>
               <div class="photo-slide">
                 <img src="footbal.jpg" alt="Atividades esportivas e festas infantis">
@@ -2390,11 +2552,7 @@ button {
           <span class="eyebrow">01 · Enquadramento</span>
           <h2>Um projeto com cor, propósito e imaginação.</h2>
           
-          <br>
-          <p>A Magia das Cores é uma marca direcionada para o universo infantil, dedicada à criação de momentos de diversão e experiências para crianças, nomeadamente através da organização e animação de festas de aniversário.</p>
-          <p>O contacto com a marca permitiu desenvolver um projeto multidisciplinar no qual o design e a comunicação assumem um papel fundamental na apresentação dos serviços e na criação de uma presença digital mais consistente.</p>
-          <p>O projeto surgiu também como uma oportunidade de aplicar, num contexto real, conhecimentos adquiridos ao longo da formação em Desenvolvimento de Produtos Multimédia.</p>
-          <p>O objetivo do showcase é apresentar os elementos da identidade visual e as propostas de comunicação desenvolvidas para diferentes serviços da marca.</p>
+          <p>A Magia das Cores cria festas e atividades para crianças. Este projeto desenvolve a sua identidade visual e comunicação digital para apresentar os serviços de forma coerente e apelativa.</p>
         </div>
 
         <div class="photo-slider" data-slider aria-label="Galeria de imagens do projeto">
@@ -2404,12 +2562,14 @@ button {
               <span>Festa</span>
             </div>
             <div class="slide slide--2">
-              <img src="giz.jpg" alt="Roupas e elementos visuais da marca">
-              <span>Atividades</span>
-            </div>
-            <div class="slide slide--3">
               <img src="roupas.jpg" alt="Espaço de brincadeiras com giz e criatividade">
               <span>Cores</span>
+              
+            </div>
+            <div class="slide slide--3">
+              <img src="giz01.jpg" alt="Roupas e elementos visuais da marca">
+              <span>Atividades</span>
+              
             </div>
           </div>
 
@@ -2426,14 +2586,13 @@ button {
         <p>A Magia das Cores apresenta uma variedade de serviços de animação infantil, festas temáticas e atividades para criar momentos especiais.</p></div>
         
         <div class="services-grid">
-        <article class="service"><div class="service-icon"><img src="pinkb.png" alt="Balão cor-de-rosa"></div><h3>Festas de aniversário</h3><p>Uma celebração cheia de brincadeiras, surpresas e memórias.</p><br><b></b><div class="service-feature"><a href="packbrilhante.html" class="btn btn-primary btn-small">Ver pacote</a></div></article>
-        <article class="service"><div class="service-icon"><img src="presente.png" alt="Presente azul"></div><h3>Animação infantil</h3><p>Atividades divertidas que convidam a brincar e participar.</p><br><div class="service-feature"><a href="aniinfantil.html" class="btn btn-primary btn-small">Ver imagens</a></div></article>
+        <article class="service"><div class="service-icon"><img src="bola.png" alt="Bola colorida"></div><h3>Animação infantil</h3><p>Atividades divertidas que convidam a brincar e participar.</p><br><div class="service-feature"><a href="aniinfantil.html" class="btn btn-primary btn-small">Ver imagens</a></div></article>
         <article class="service"><div class="service-icon"><img src="bolo.png" alt="Bolo de aniversário"></div><h3>Eventos especiais</h3><p>Momentos temáticos para assinalar dias especiais.</p><br><div class="service-feature"><a href="eventos.html" class="btn btn-primary btn-small">Ver mais</a></div></article>
         <p style="text-align:center;color:#77708a;font-size:.85rem;margin:22px 0 0">
       </div>
     </section>
 
-    <section class="section" id="publico">
+    <section class="section audience-section" id="publico">
       <div class="container"><div class="section-head"><span class="eyebrow">03 · Estratégia de comunicação</span><h2>Dois públicos, um truque de magia.</h2><p>A comunicação deve despertar entusiasmo nas crianças e, ao mesmo tempo, transmitir confiança, segurança e profissionalismo aos pais e encarregados de educação.</p></div>
         <div class="audience-grid">
           <article class="info-card flip-card">
@@ -2452,7 +2611,7 @@ button {
               </div>
               <div class="flip-back flip-back--slideshow" aria-hidden="true">
                 <img src="capturar12.jpg" alt="Crianças a brincar numa festa">
-                <img src="Capturar09.jpg" alt="Atividade de pinturas faciais">
+                <img src="post09.jpg" alt="Atividade de pinturas faciais">
               </div>
             </div>
           </article>
@@ -2460,28 +2619,31 @@ button {
           <!--*ta dificil por aqui lista no notebook-->
 <!--anota falta fotos-->
           
-          <article class="info-card flip-card">
-            <div class="flip-inner">
-              <div class="flip-front">
-                <h3>Comunicação dirigida aos pais</h3>
-                <p>Os pais ou responsáveis têm um papel central na escolha de um espaço para os seus filhos; precisam de informação clara e credível.</p>
-                
-                <ul class="check-list">
-                  <li>Serviços, preços e condições</li>
-                  <li>Horários e localização</li>
-                  <li>Atividades disponíveis</li>
-                  <li>Condições das festas</li>
-                  <li>Contacto, segurança e acompanhamento</li>
-                </ul>
-                
-                <span class="audience-tag">Público primário: pais/encarregados</span>
+          <div class="audience-card-with-action">
+            <article class="info-card flip-card">
+              <div class="flip-inner">
+                <div class="flip-front">
+                  <h3>Comunicação dirigida aos pais</h3>
+                  <p>Os pais ou responsáveis têm um papel central na escolha de um espaço para os seus filhos; precisam de informação clara e credível.</p>
+                  
+                  <ul class="check-list">
+                    <li>Serviços, preços e condições</li>
+                    <li>Horários e localização</li>
+                    <li>Atividades disponíveis</li>
+                    <li>Condições das festas</li>
+                    <li>Contacto, segurança e acompanhamento</li>
+                  </ul>
+                  
+                  <span class="audience-tag">Público primário: pais/encarregados</span>
+                </div>
+                <div class="flip-back flip-back--slideshow" aria-hidden="true">
+                  <img src="capturar11.jpg" alt="Detalhes e roupas do evento">
+                  <img src="capturar10.jpg" alt="Atividade de pinturas faciais">
+                </div>
               </div>
-              <div class="flip-back flip-back--slideshow" aria-hidden="true">
-                <img src="capturar11.jpg" alt="Detalhes e roupas do evento">
-                <img src="Capturar10.jpg" alt="Atividade de pinturas faciais">
-              </div>
-            </div>
-          </article>
+            </article>
+            <button class="btn btn-secondary btn-small post-recipe-button" type="button" data-post-recipe="families">Ver receita de post</button>
+          </div>
 
           <article class="info-card flip-card">
             <div class="flip-inner">
@@ -2501,7 +2663,7 @@ button {
               </div>
               <div class="flip-back flip-back--slideshow" aria-hidden="true">
                 <img src="capturar14.jpg" alt="Detalhes coloridos e materiais criativos">
-                <img src="Capturar07.jpg" alt="Atividade de pinturas faciais">
+                <img src="post07.jpg" alt="Atividade de pinturas faciais">
               </div>
             </div>
           </article>
@@ -2509,65 +2671,23 @@ button {
       </div>
     </section>
 <!--so idvdidvidividivdivdiv fds-->
+
+    <dialog class="post-recipe-dialog" id="postRecipeDialog" aria-labelledby="postRecipeTitle" aria-describedby="postRecipeDescription">
+      <button class="post-recipe-dialog-close" type="button" aria-label="Fechar receita">×</button>
+      <h2 id="postRecipeTitle"></h2>
+      <p id="postRecipeDescription"></p>
+      <dl>
+        <dt>Imagem</dt>
+        <dd id="postRecipeVisual"></dd>
+        <dt>Texto</dt>
+        <dd id="postRecipeText"></dd>
+        <dt>Chamada à ação</dt>
+        <dd id="postRecipeAction"></dd>
+      </dl>
+    </dialog>
     
-    <section class="section" id="conteudos">
-      <div class="container"><div class="section-head"><span class="eyebrow">04 · Presença digital</span><h2>Conteúdos que mostram a experiência.</h2><p>As redes sociais funcionam como uma montra digital: ajudam a mostrar o espaço, as atividades e os momentos que tornam a experiência especial.</p></div>
-      <br> 
-      <div class="social-layout"><article class="social-card"><h3><span style="font-size:1.5rem"> </span> Redes sociais e marketing digital</h3>
-          <p>O Instagram é particularmente relevante para uma marca visual como a Magia das Cores. <br> A consistência das cores, tipografia e elementos gráficos ajuda a tornar o perfil reconhecível e único.</p>
-<br>
-        <!--TA AQUI O BOTAO CRLH-->
-          <a
-  href="https://www.instagram.com/festas.magiadascores"
-  class="instagram-button"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Segue-nos no Instagram
-</a>
-
-          <section class="instagram-preview" aria-label="Pré-visualização do perfil no Instagram">
-            <div class="instagram-profile">
-              <div class="instagram-avatar"><img src="logomdc.png" alt=""></div>
-              <div class="instagram-profile-copy">
-                <strong>festas.magiadascores</strong>
-                <span>“Onde a Magia ganha mais Cor!”</span>
-              </div>
-            </div>
-            <div class="instagram-posts" aria-label="Exemplos de publicações">
-              <img src="capturar.jpg" alt="Decoração colorida para uma festa">
-              <img src="capturar00.jpg" alt="Atividade divertida numa festa">
-              <img src="capturar01.jpg" alt="Espaço preparado para uma celebração">
-              <img src="capturar02.jpg" alt="Atividade desportiva infantil">
-              <img src="capturar03.jpg" alt="Figurinos e acessórios para animação">
-              <img src="capturar04.jpg" alt="Materiais para uma atividade criativa">
-              <img src="capturar05.jpg" alt="Atividade desportiva infantil">
-              <img src="capturar06.jpg" alt="Figurinos e acessórios para animação">
-              <img src="capturar07.jpg" alt="Materiais para uma atividade criativa">
-              <img src="capturar08.jpg" alt="Atividade desportiva infantil">
-              <img src="capturar09.jpg" alt="Figurinos e acessórios para animação">
-              <img src="capturar10.jpg" alt="Materiais para uma atividade criativa">
-            </div>
-          </section>
-        
-<!--CRTL CCTRL V É GODS SENT-->
-        
-        </article>
-        <article class="calendar"><h3 style="margin-bottom:8px">Calendário semanal de conteúdos</h3><p style="font-size:.9rem;color:#77708a">Planear publicações ajuda a manter uma presença regular e evita uma comunicação feita de forma aleatória.</p>
-            <div class="calendar-row"><div class="calendar-day">Segunda-feira</div><div class="calendar-content"><span>Fotografia/clip Story </span><br>Destaque de uma festa.</div></div>
-            <div class="calendar-row"><div class="calendar-day">Terça-feira</div><div class="calendar-content"><span>Fotografia Post</span><br>Destaque do espaço e serviços.</div></div>
-            <div class="calendar-row"><div class="calendar-day">Quarta-feira</div><div class="calendar-content"><span>Story interativa</span><br>Perguntas, sondagens e quizzes.</div></div>
-            <div class="calendar-row"><div class="calendar-day">Quinta-feira</div><div class="calendar-content"><span>Livre</span><br>Descanso do algoritmo.</div></div>
-            <div class="calendar-row"><div class="calendar-day">Sexta-feira</div><div class="calendar-content"><span>Story Formação</span><br>Animadores aprendem jogos e novas formas de entreternimento.</div></div>
-            <div class="calendar-row"><div class="calendar-day">Sábado</div><div class="calendar-content"><span>Reel divertido</span><br>Conteúdo curto, dinâmico e visual.</div></div>
-            <div class="calendar-row"><div class="calendar-day">Domingo</div><div class="calendar-content"><span>Livre</span><br>Descanso do algoritmo.</div></div>
-        </article>
-        </div>
-        
-    </section>
-
     <section class="section identity-section" id="identidade">
-      <div class="container"><div class="section-head"><span class="eyebrow">05 · Universo da marca</span><h2>Uma identidade que se reconhece à primeira.</h2><p>A identidade visual reúne os elementos gráficos que tornam a Magia das Cores reconhecível: logótipo, cores, tipografia, ilustrações, cartazes, flyers, redes sociais e materiais promocionais.</p></div>
+      <div class="container"><div class="section-head"><span class="eyebrow">04 · Universo da marca</span><h2>Uma identidade que se reconhece à primeira.</h2><p>A identidade visual reúne os elementos gráficos que tornam a Magia das Cores reconhecível: logótipo, cores, tipografia, ilustrações, cartazes, flyers, redes sociais e materiais promocionais.</p></div>
         <div class="identity-grid">
           <article class="identity-panel"><h3>Os valores da Magia das Cores</h3><p>O nome evoca fantasia, imaginação e cor, ideias associadas ao universo infantil e às experiências que a marca pretende proporcionar às crianças e às suas famílias.</p><div class="values-grid"><div class="value"><div class="value-icon"><img src="bola.png" alt=""></div><strong>Diversão</strong></div><div class="value"><div class="value-icon"><img src="pincel.png" alt=""></div><strong>Criatividade</strong></div><div class="value"><div class="value-icon"><img src="balao.png" alt=""></div><strong>Alegria</strong></div><div class="value"><div class="value-icon"><img src="doce.png" alt=""></div><strong>Momentos especiais</strong></div><div class="value"><div class="value-icon"><img src="cartola.png" alt=""></div><strong>Segurança</strong></div></div></article>
           
@@ -2619,60 +2739,144 @@ button {
                         <a class="btn btn-primary btn-small" href="elementos.html">Ver galeria de elementos</a>
                       </div>
                     </article>
+        <article class="identity-panel logo-section" aria-labelledby="logo-section-title">
+          <h3 id="logo-section-title">Assinatura visual</h3>
+          <p>O logótipo representa a marca e deve manter-se simples, memorável e legível. As versões original e colorida mostram como a assinatura se adapta a diferentes materiais.</p>
+          <div class="logo-comparison">
+            <article class="logo-card">
+              <small>Referência do projeto · logótipo original</small>
+              <div class="logo-demo original"><img src="logoog.png" alt="Logótipo original"></div>
+              <p>O logótipo é um dos principais elementos de identificação visual da marca.</p>
+            </article>
+
+            <article class="logo-card">
+              <small>Proposta de apresentação · versão colorida</small>
+              <div class="logo-demo new"><img src="logomdc.png" alt="Versão colorida do logótipo (placeholder)"></div>
+              <p>Uma assinatura digital mais divertida, com letras expressivas e cores vivas, pensada para funcionar em cartazes e pequenas imagens de perfil.</p>
+            </article>
+          </div>
+
+          <div class="logo-rules"><span>✓ Simples</span><span>✓ Fácil de memorizar</span><span>✓ Legível</span><span>✓ Adaptável</span><span>✓ Adequado ao universo infantil</span></div>
+          <div style="text-align:center;margin-top:14px">
+            <a class="btn btn-primary btn-small" href="logo.html">Galeria de logos</a>
+          </div>
+        </article>
         </div>
       </div>
     </section>
 
-    <section class="section logo-section" id="logotipo">
+    <section class="section social-section" id="conteudos">
+      <div class="container"><div class="section-head"><span class="eyebrow">05 · Presença digital</span><h2>Conteúdos que mostram a experiência.</h2><p>As redes sociais funcionam como uma montra digital: ajudam a mostrar o espaço, as atividades e os momentos que tornam a experiência especial.</p></div>
+      <br> 
+      <div class="social-layout"><article class="social-card"><h3><span style="font-size:1.5rem"> </span> Redes sociais e marketing digital</h3>
+          <p>O Instagram é particularmente relevante para uma marca visual como a Magia das Cores. <br> A consistência das cores, tipografia e elementos gráficos ajuda a tornar o perfil reconhecível e único.</p>
+<br>
+        <!--TA AQUI O BOTAO CRLH-->
+          <a
+  href="https://www.instagram.com/festas.magiadascores"
+  class="instagram-button"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Segue-nos no Instagram
+</a>
+
+          <section class="instagram-preview" aria-label="Pré-visualização do perfil no Instagram">
+            <div class="instagram-profile">
+              <div class="instagram-avatar"><img src="logomdc.png" alt=""></div>
+              <div class="instagram-profile-copy">
+                <strong>festas.magiadascores</strong>
+                <span>“Onde a Magia ganha mais Cor!”</span>
+              </div>
+            </div>
+            <div class="instagram-posts" aria-label="Exemplos de publicações">
+              <img src="capturar.jpg" alt="Decoração colorida para uma festa">
+              <img src="capturar00.jpg" alt="Atividade divertida numa festa">
+              <img src="post01.jpg" alt="Espaço preparado para uma celebração">
+              <img src="post02.jpg" alt="Atividade desportiva infantil">
+              <img src="post03.jpg" alt="Figurinos e acessórios para animação">
+              <img src="post04.jpg" alt="Materiais para uma atividade criativa">
+              <img src="post05.jpg" alt="Atividade desportiva infantil">
+              <img src="post06.jpg" alt="Figurinos e acessórios para animação">
+              <img src="post07.jpg" alt="Materiais para uma atividade criativa">
+              <img src="post08.jpg" alt="Atividade desportiva infantil">
+              <img src="post09.jpg" alt="Figurinos e acessórios para animação">
+              <img src="capturar10.jpg" alt="Materiais para uma atividade criativa">
+            </div>
+          </section>
+        
+<!--CRTL CCTRL V É GODS SENT-->
+        
+        </article>
+        <article class="calendar"><h3 style="margin-bottom:8px">Calendário semanal de conteúdos</h3><p style="font-size:.9rem;color:#77708a">Planear publicações ajuda a manter uma presença regular e evita uma comunicação feita de forma aleatória.</p>
+            <div class="calendar-row"><div class="calendar-day">Segunda-feira</div><div class="calendar-content"><span>Fotografia/clip Story </span><br>Destaque de uma festa.</div></div>
+            <div class="calendar-row"><div class="calendar-day">Terça-feira</div><div class="calendar-content"><span>Fotografia Post</span><br>Destaque do espaço e serviços.</div></div>
+            <div class="calendar-row"><div class="calendar-day">Quarta-feira</div><div class="calendar-content"><span>Story interativa</span><br>Perguntas, sondagens e quizzes.</div></div>
+            <div class="calendar-row"><div class="calendar-day">Quinta-feira</div><div class="calendar-content"><span>Livre</span><br>Descanso do algoritmo.</div></div>
+            <div class="calendar-row"><div class="calendar-day">Sexta-feira</div><div class="calendar-content"><span>Story Formação</span><br>Animadores aprendem jogos e novas formas de entreternimento.</div></div>
+            <div class="calendar-row"><div class="calendar-day">Sábado</div><div class="calendar-content"><span>Reel divertido</span><br>Conteúdo curto, dinâmico e visual.</div></div>
+            <div class="calendar-row"><div class="calendar-day">Domingo</div><div class="calendar-content"><span>Livre</span><br>Descanso do algoritmo.</div></div>
+        </article>
+        </div>
+        
+    </section>
+
+    <section class="section closing-section" id="agradecimentos">
       <div class="container">
-        <div class="section-head"><span class="eyebrow">06
-           · Assinatura visual</span><h2>O logótipo: pequeno símbolo, grande reconhecimento.</h2><p>Um logótipo adequado deve ser simples, memorável, legível, adaptável a diferentes tamanhos e coerente com o conceito de magia e cor.</p></div>
-        <div class="logo-comparison">
-          <article class="logo-card">
-            <small>Referência do projeto · logótipo original</small>
-            <div class="logo-demo original"><img src="logoog.png" alt="Logótipo original"></div>
-            <p>O logótipo é um dos principais elementos de identificação visual da marca.</p>
-          </article>
-
-          <article class="logo-card">
-            <small>Proposta de apresentação · versão colorida</small>
-            <div class="logo-demo new"><img src="logomdc.png" alt="Versão colorida do logótipo (placeholder)"></div>
-            <p>Uma assinatura digital mais divertida, com letras expressivas e cores vivas, pensada para funcionar em cartazes e pequenas imagens de perfil.</p>
-          </article>
+        <div class="section-head">
+          <span class="eyebrow">06 · Encerramento</span>
+          <h2>Conclusão e agradecimentos.</h2>
         </div>
-
-        <div class="logo-rules"><span>✓ Simples</span><span>✓ Fácil de memorizar</span><span>✓ Legível</span><span>✓ Adaptável</span><span>✓ Adequado ao universo infantil</span></div>
-        <div style="text-align:center;margin-top:14px">
-          <a class="btn btn-primary btn-small" href="logo.html">Galeria de logos</a>
+        <div class="intro-grid">
+          <article class="intro-item closing-note">
+            <div>
+              <h3>Conclusão</h3>
+              <p>Este projeto desenvolveu uma proposta de identidade visual e comunicação digital para a Magia das Cores, aproximando a marca das crianças e das suas famílias.</p>
+            </div>
+          </article>
+          <article class="intro-item closing-note">
+            <div>
+              <h3>Agradecimentos</h3>
+              <p>Agradeço à Magia das Cores, à equipa, ao orientador, aos formadores e a todas as pessoas que acompanharam este percurso.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
-
-<article class="intro-item closing-note"><div><h3>Conclusão</h3><p>A Magia das Cores, à equipa, ao orientador, aos formadores e a todas as pessoas que acompanharam este percurso. <em> texto </em></p></div></article>
-<br>
-<article class="intro-item closing-note"><div><h3>Agradecimentos</h3><p>agradecer à Magia das Cores, à equipa, ao orientador, aos formadores e a todas as pessoas que acompanharam este percurso. <em> texto </em></p></div></article>
-<br>
 
   </main>
 
-  <footer class="site-footer"><div class="container footer-row"><a class="footer-brand" href="#inicio" aria-label="Magia das Cores — voltar ao início"><img src="logomdc.png" alt="Logótipo Magia das Cores"></a>
-    <div class="footer-copy">“Onde a Magia ganha mais Cor!” · Showcase multimédia · 2026</div>
-    
-    
-    <!-- CHECK LISTA apagar after donme 
-    falta
-    02 magu icons botao direcionar a imagens no more secçoes ver cena dos flyers  
-    03 imagens check textos,
-    04 mudar fotos layout insta
-    05 icons nos valores converter imagens, fiz no big gap
-    06 galeria
-
-    1 semana left é crazy
-
-    falta importar conteudos
-    -->
-
-    <!-- vais levae com o pé NAO O FOOTER NO CU-->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand-block">
+        <a class="footer-brand" href="#inicio" aria-label="Magia das Cores — voltar ao início"><img src="logomdc.png" alt="Logótipo Magia das Cores"></a>
+        <p class="footer-tagline">“Onde a Magia ganha mais Cor!”<br>Momentos especiais, cheios de imaginação.</p>
+      </div>
+      <div>
+        <h2 class="footer-heading">Explora</h2>
+        <nav class="footer-links" aria-label="Navegação do rodapé">
+          <a href="#inicio">Início</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#identidade">Universo da marca</a>
+          <a href="#conteudos">Redes sociais</a>
+        </nav>
+      </div>
+      <div class="footer-social">
+        <h2 class="footer-heading">Descobre mais</h2>
+        <nav class="footer-links" aria-label="Mais páginas">
+          <a href="aniinfantil.html">Galeria de fotografias</a>
+          <a href="elementos.html">Elementos gráficos</a>
+          <a href="eventos.html">Eventos especiais</a>
+          <a href="packbrilhante.html">Pack Brilhante</a>
+        </nav>
+        <p style="margin-top:16px">Acompanha as novidades e os momentos da marca.</p>
+        <a class="footer-instagram" href="https://www.instagram.com/festas.magiadascores" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Magia das Cores · Showcase multimédia</p>
+      <p>Feito com cor e imaginação.</p>
+    </div>
   </footer>
 
   <button class="back-top" id="backTop" aria-label="Voltar ao topo">↑</button>
@@ -2722,8 +2926,6 @@ button {
 
 
 
-    setInterval(() => goToSlide(currentSlide + 1), 3500);
-
     updatePhotoSlider();
 
     /* Automatic Slide Rotation*/
@@ -2753,6 +2955,7 @@ button {
       const nextBtn = slider.querySelector('.slider-arrow.next');
       const dotsWrap = slider.querySelector('.slider-dots');
       let currentIndex = 0;
+      let autoplayInterval;
 
       if (!track || slides.length === 0) return;
 
@@ -2782,18 +2985,41 @@ button {
         }
       }
 
+      function startAutoplay() {
+        if (autoplayInterval || slides.length < 2) return;
+        autoplayInterval = window.setInterval(() => {
+          currentIndex = (currentIndex + 1) % slides.length;
+          render();
+        }, 4000);
+      }
+
+      function stopAutoplay() {
+        window.clearInterval(autoplayInterval);
+        autoplayInterval = undefined;
+      }
+
       prevBtn?.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         render();
+        startAutoplay();
       });
 
       nextBtn?.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % slides.length;
         render();
+        startAutoplay();
+      });
+
+      slider.addEventListener('mouseenter', stopAutoplay);
+      slider.addEventListener('mouseleave', startAutoplay);
+      slider.addEventListener('focusin', stopAutoplay);
+      slider.addEventListener('focusout', (event) => {
+        if (!slider.contains(event.relatedTarget)) startAutoplay();
       });
 
       renderDots();
       render();
+      startAutoplay();
     });
   </script>
 
@@ -2844,6 +3070,45 @@ button {
       modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
       document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
     })();
+  </script>
+
+  <script>
+    const postRecipes = {
+      families: {
+        title: 'Receita de post fotográfico — famílias',
+        description: 'Uma fotografia real ajuda as famílias a imaginar a experiência e transmite proximidade.',
+        visual: 'Escolhe uma fotografia nítida de uma atividade ou de um espaço preparado, com boa luz e pessoas a participar.',
+        text: 'Apresenta a atividade e indica, de forma clara, o que está incluído ou para que idades é adequada.',
+        action: 'Convida a pedir informações sobre disponibilidade, preços ou marcações.'
+      }
+    };
+
+    const postRecipeDialog = document.getElementById('postRecipeDialog');
+    const postRecipeTitle = document.getElementById('postRecipeTitle');
+    const postRecipeDescription = document.getElementById('postRecipeDescription');
+    const postRecipeVisual = document.getElementById('postRecipeVisual');
+    const postRecipeText = document.getElementById('postRecipeText');
+    const postRecipeAction = document.getElementById('postRecipeAction');
+
+    document.querySelectorAll('[data-post-recipe]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const recipe = postRecipes[button.dataset.postRecipe];
+        postRecipeTitle.textContent = recipe.title;
+        postRecipeDescription.textContent = recipe.description;
+        postRecipeVisual.textContent = recipe.visual;
+        postRecipeText.textContent = recipe.text;
+        postRecipeAction.textContent = recipe.action;
+        postRecipeDialog.showModal();
+      });
+    });
+
+    postRecipeDialog.querySelector('.post-recipe-dialog-close').addEventListener('click', () => {
+      postRecipeDialog.close();
+    });
+
+    postRecipeDialog.addEventListener('click', (event) => {
+      if (event.target === postRecipeDialog) postRecipeDialog.close();
+    });
   </script>
 
   <script>
