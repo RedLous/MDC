@@ -14,7 +14,7 @@
         .container{width:min(1100px,calc(100% - 40px));margin:28px auto}
         .brand{font-family:'Baloo 2',cursive}
         h1{font-family:'Baloo 2',cursive}
-        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+        .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
         .tile{background:#fff;border:1px solid #f0e8f4;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
         .tile img{width:100%;height:220px;object-fit:contain;background:#fff;padding:20px}
         .tile img[src="logowhite.png"]{background:#29345f}
@@ -26,22 +26,24 @@
         .lb-inner img{width:100%;height:auto;display:block}
         .lb-description{margin:0;padding:16px 20px 20px;color:#65708a;line-height:1.6}
         .lb-close{position:absolute;right:14px;top:14px;background:#fff;border:0;padding:8px 10px;border-radius:8px;font-weight:900}
-        .logo-sizes{margin-top:48px}
+        .logo-sizes{margin-top:34px}
         .logo-sizes h2{margin:0 0 8px}
-        .logo-sizes-intro{margin:0 0 18px;color:#65708a}
-        .logo-size-table-wrap{overflow-x:auto;border:1px solid #f0e8f4;border-radius:16px;background:#fff;box-shadow:var(--shadow)}
-        .logo-size-table{width:100%;min-width:720px;border-collapse:collapse;text-align:center}
-        .logo-size-table th,.logo-size-table td{padding:12px;border-bottom:1px solid #f0e8f4}
+        .logo-sizes-intro{margin:0 0 12px;color:#65708a}
+        .logo-size-table-wrap{max-width:780px;margin-inline:auto;overflow-x:auto;border:1px solid #f0e8f4;border-radius:16px;background:#fff;box-shadow:var(--shadow)}
+        .logo-size-table{width:100%;min-width:620px;border-collapse:collapse;text-align:center}
+        .logo-size-table th,.logo-size-table td{padding:6px 8px;border-bottom:1px solid #f0e8f4}
         .logo-size-table thead th{color:#29345f;font-family:'Baloo 2',cursive;font-size:1.1rem}
+        .logo-size-limit{display:block;color:#65708a;font:700 .68rem Nunito,sans-serif}
         .logo-size-table tbody th{text-align:left;color:#4b3a5a;font-size:.9rem}
-        .logo-size-preview{display:grid;min-height:132px;place-items:center;border-radius:10px;background:#fff}
+        .logo-size-preview{display:grid;min-height:82px;place-items:center;border-radius:10px;background:#fff}
         .logo-size-preview img{width:auto;height:auto;object-fit:contain}
-        .logo-size-preview img.size-small{max-width:42px;max-height:54px}
-        .logo-size-preview img.size-medium{max-width:68px;max-height:88px}
-        .logo-size-preview img.size-large{max-width:94px;max-height:122px}
+        .logo-size-preview img.size-small{max-width:34px;max-height:40px}
+        .logo-size-preview img.size-medium{max-width:52px;max-height:60px}
+        .logo-size-preview img.size-large{max-width:70px;max-height:80px}
         .logo-size-preview.is-white{background:#29345f}
         .logo-size-table tr:last-child th,.logo-size-table tr:last-child td{border-bottom:0}
-        @media(max-width:600px){.logo-sizes{margin-top:36px}.logo-size-table{min-width:650px}}
+        @media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+        @media(max-width:600px){.grid{grid-template-columns:1fr}.logo-sizes{margin-top:30px}.logo-size-table{min-width:600px}}
     </style>
     <link rel="stylesheet" href="subpages.css">
     <link rel="stylesheet" href="footer.css">
@@ -68,16 +70,29 @@
         </div>
 
         <div class="grid">
-            <div class="tile"><img src="logoblack.png" alt="Logótipo Magia das Cores em preto" data-application="A versão monocromática funciona bem em documentos, carimbos e impressões a uma só cor."><div class="label">Versão preta</div></div>
-            <div class="tile"><img src="logojustcores.png" alt="Logótipo Magia das Cores com as palavras just cores" data-application="Esta variante pode ser usada em campanhas e publicações focadas na cor, em títulos de materiais promocionais e em elementos gráficos da marca."><div class="label">Versão “Just Cores”</div></div>
-            <div class="tile"><img src="logomdc.png" alt="Logótipo principal Magia das Cores" data-application="A versão principal é indicada para o website, redes sociais, cartazes, convites e outros materiais institucionais da marca."><div class="label">Logótipo principal</div></div>
+            
             <div class="tile"><img src="logoog.png" alt="Logótipo original Magia das Cores" data-application="A versão original pode ser aplicada em materiais de arquivo, peças que preservem a identidade de origem e conteúdos que apresentem a história da marca."><div class="label">Logótipo original</div></div>
-            <div class="tile"><img src="logored.png" alt="Logótipo Magia das Cores em vermelho" data-application="A versão vermelha destaca-se em cartazes, publicações promocionais e fundos claros, quando se pretende dar mais energia a uma mensagem."><div class="label">Versão vermelha</div></div>
-            <div class="tile"><img src="logoblueb.png" alt="Logótipo Magia das Cores com balão azul" data-application="A variante com balão azul pode identificar materiais de atividades, convites e publicações com uma composição leve e festiva."><div class="label">Versão com balão azul</div></div>
-            <div class="tile"><img src="logogreenb.png" alt="Logótipo Magia das Cores com balão verde" data-application="A variante com balão verde adapta-se a materiais de atividades, sinalética e publicações que beneficiem de um apontamento de cor diferente."><div class="label">Versão com balão verde</div></div>
-            <div class="tile"><img src="logoblue.png" alt="Logótipo Magia das Cores em azul" data-application="A versão azul oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão azul</div></div>
+            <div class="tile"><img src="logowhiteog.png" alt="Logótipo Magia das Cores em azul" data-application="A versão azul oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Original a Branco</div></div> 
+            <div class="tile"><img src="logoblackog.png" alt="Logótipo Magia das Cores em preto" data-application="A versão preta oferece uma alternativa para assinaturas digitais, documentos e peças gráficas em fundos escuros."><div class="label">Original a Preto</div></div>
+            
+            <div class="tile"><img src="logomdc.png" alt="Logótipo principal Magia das Cores" data-application="A versão principal é indicada para o website, redes sociais, cartazes, convites e outros materiais institucionais da marca."><div class="label">Logótipo principal</div></div> 
+            <div class="tile"><img src="logobalaowhite.png" alt="Logótipo principal Magia das Cores" data-application="A versão principal é indicada para o website, redes sociais, cartazes, convites e outros materiais institucionais da marca."><div class="label">Logótipo principal</div></div>
+            <div class="tile"><img src="logobalaoblack.png" alt="Logótipo principal Magia das Cores" data-application="A versão principal é indicada para o website, redes sociais, cartazes, convites e outros materiais institucionais da marca."><div class="label">Logótipo principal</div></div>
+            
             <div class="tile"><img src="logoredb.png" alt="Logótipo Magia das Cores com balão vermelho" data-application="A variante com balão vermelho pode dar destaque a anúncios de festas, promoções e materiais impressos sobre fundos claros."><div class="label">Versão com balão vermelho</div></div>
+            <div class="tile"><img src="logoblueb.png" alt="Logótipo Magia das Cores com balão azul" data-application="A variante com balão azul pode identificar materiais de atividades, convites e publicações com uma composição leve e festiva."><div class="label">Versão com balão azul</div></div>
+            <div class="tile"><img src="logopinkb.png" alt="Logótipo Magia das Cores com balão verde" data-application="A variante com balão verde adapta-se a materiais de atividades, sinalética e publicações que beneficiem de um apontamento de cor diferente."><div class="label">Versão com balão rosa</div></div>
+            
+            
+            <div class="tile"><img src="logored.png" alt="Logótipo Magia das Cores em vermelho" data-application="A versão vermelha destaca-se em cartazes, publicações promocionais e fundos claros, quando se pretende dar mais energia a uma mensagem."><div class="label">Versão vermelha</div></div>
             <div class="tile"><img src="logowhite.png" alt="Logótipo Magia das Cores em branco" data-application="A versão branca foi pensada para fundos escuros, como fotografias, capas de redes sociais, vídeos e sinalética."><div class="label">Versão branca</div></div>
+            <div class="tile"><img src="logoblack.png" alt="Logótipo Magia das Cores em preto" data-application="A versão monocromática funciona bem em documentos, carimbos e impressões a uma só cor."><div class="label">Versão preta</div></div>
+            
+            <div class="tile"><img src="logocores.png" alt="Logótipo Magia das Cores com as palavras just cores" data-application="Esta variante pode ser usada em campanhas e publicações focadas na cor, em títulos de materiais promocionais e em elementos gráficos da marca."><div class="label">Versão “Just Cores”</div></div>
+            <div class="tile"><img src="logoblue.png" alt="Logótipo Magia das Cores em azul" data-application="A versão azul oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão azul</div></div>
+            <div class="tile"><img src="logopink.png" alt="Logótipo Magia das Cores em azul" data-application="A versão azul oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão azul</div></div>
+             
+            
         </div>
 
         <section class="logo-sizes" aria-labelledby="logo-sizes-title">
@@ -88,9 +103,9 @@
                     <thead>
                         <tr>
                             <th scope="col">Versão</th>
-                            <th scope="col">Pequeno</th>
-                            <th scope="col">Médio</th>
-                            <th scope="col">Grande</th>
+                            <th scope="col">Pequeno<span class="logo-size-limit">até 34 × 40 px</span></th>
+                            <th scope="col">Médio<span class="logo-size-limit">até 52 × 60 px</span></th>
+                            <th scope="col">Grande<span class="logo-size-limit">até 70 × 80 px</span></th>
                         </tr>
                     </thead>
                     <tbody>

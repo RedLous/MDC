@@ -1258,7 +1258,15 @@ button {
 }
 
 .closing-section .intro-grid {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 24px;
+}
+
+.closing-magu-icon {
+  align-self: center;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
 }
 
 .closing-section .intro-item {
@@ -1298,6 +1306,10 @@ button {
   border-radius: var(--radius);
   background: var(--white);
   box-shadow: 0 10px 35px #58317908;
+}
+
+.identity-panel--compact {
+ align-self: start;
 }
 
 .identity-panel h3 {
@@ -1873,8 +1885,9 @@ button {
 
 .logo-section > p {
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0;
   color: var(--muted);
+  text-align: left;
 }
 
 .logo-comparison {
@@ -1951,6 +1964,7 @@ button {
   margin: 17px 0 0;
   color: #69718a;
   font-size: 0.9rem;
+  text-align: left;
 }
 
 .logo-rules {
@@ -2537,7 +2551,7 @@ button {
           
           <p>Um universo de festas, imaginação e animação infantil, apresentado através de uma identidade visual alegre e de uma comunicação digital pensada para crianças e famílias.</p>
           
-          <div class="hero-actions"><a class="btn btn-secondary" href="#servicos">Conhecer os serviços</a></div>
+          <div class="hero-actions"><a class="btn btn-secondary" href="packbrilhante.html">Conhecer os serviços</a></div>
     
         </div>
         <div class="hero-art" aria-label="Ilustração decorativa de uma festa colorida">
@@ -2748,15 +2762,19 @@ button {
             <p style="font-size:.82rem;color:#81758d;margin-top:13px">A perceção das cores depende do contexto, da cultura, da combinação entre os elementos e claro se o formato é digital ou para impressão.</p>
           </article>
                               
-          <article class="identity-panel"><h3>Elementos gráficos e consistência</h3>
+          <article class="identity-panel identity-panel--compact"><h3>Elementos gráficos e consistência</h3>
             <p>Presnte, Bolo, balões, formas orgânicas, ilustrações, padrões coloridos e a mascote Magu, ajudam a criar uma linguagem visual própria.</p><p>Os mesmos princípios devem ser aplicados de forma coerente no Instagram, Facebook, cartazes, convites, flyers, website, decoração e materiais promocionais, reforçando o reconhecimento e a imagem profissional.</p>
                       <div style="margin-top:14px;text-align:center">
                         <a class="btn btn-primary btn-small" href="elementos.html">Ver galeria de elementos</a>
                       </div>
                     </article>
+
+                    <!--assinatura digital aqui-->
+
         <article class="identity-panel logo-section" aria-labelledby="logo-section-title">
           <h3 id="logo-section-title">Assinatura visual</h3>
           <p>O logótipo representa a marca e deve manter-se simples, memorável e legível. As versões original e colorida mostram como a assinatura se adapta a diferentes materiais.</p>
+          <br>
           <div class="logo-comparison">
             <article class="logo-card">
               <small>Referência do projeto · logótipo original</small>
@@ -2849,6 +2867,7 @@ button {
               <p>Este projeto desenvolveu uma proposta de identidade visual e comunicação digital para a Magia das Cores, aproximando a marca das crianças e das suas famílias.</p>
             </div>
           </article>
+          <img class="closing-magu-icon" src="magu.png" alt="Magu, mascote da Magia das Cores">
           <article class="intro-item closing-note">
             <div>
               <h3>Agradecimentos</h3>
@@ -3051,8 +3070,8 @@ button {
   <script>
     (function(){
       const mapping = {
-        gamja: 'festa.jpg',
-        scherzo: 'logomdc.png'
+        gamja: 'gamja.png',
+        scherzo: 'scherzo.png'
       };
 
       const modal = document.getElementById('fontModal');
