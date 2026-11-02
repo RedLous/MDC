@@ -14,6 +14,7 @@
         .container{width:min(1100px,calc(100% - 40px));margin:28px auto}
         .brand{font-family:'Baloo 2',cursive}
         h1{font-family:'Baloo 2',cursive}
+        .page-heading,.logo-sizes{max-width:780px;margin-inline:auto;text-align:center}
         .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
         .tile{background:#fff;border:1px solid #f0e8f4;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
         .tile img{width:100%;height:220px;object-fit:contain;background:#fff;padding:20px}
@@ -31,15 +32,15 @@
         .logo-sizes-intro{margin:0 0 12px;color:#65708a}
         .logo-size-table-wrap{max-width:780px;margin-inline:auto;overflow-x:auto;border:1px solid #f0e8f4;border-radius:16px;background:#fff;box-shadow:var(--shadow)}
         .logo-size-table{width:100%;min-width:620px;border-collapse:collapse;text-align:center}
-        .logo-size-table th,.logo-size-table td{padding:6px 8px;border-bottom:1px solid #f0e8f4}
+        .logo-size-table th,.logo-size-table td{padding:8px 10px;border-bottom:1px solid #f0e8f4}
         .logo-size-table thead th{color:#29345f;font-family:'Baloo 2',cursive;font-size:1.1rem}
         .logo-size-limit{display:block;color:#65708a;font:700 .68rem Nunito,sans-serif}
         .logo-size-table tbody th{text-align:left;color:#4b3a5a;font-size:.9rem}
-        .logo-size-preview{display:grid;min-height:82px;place-items:center;border-radius:10px;background:#fff}
+        .logo-size-preview{display:grid;min-height:118px;place-items:center;border-radius:10px;background:#fff}
         .logo-size-preview img{width:auto;height:auto;object-fit:contain}
-        .logo-size-preview img.size-small{max-width:34px;max-height:40px}
-        .logo-size-preview img.size-medium{max-width:52px;max-height:60px}
-        .logo-size-preview img.size-large{max-width:70px;max-height:80px}
+        .logo-size-preview img.size-small{max-width:46px;max-height:54px}
+        .logo-size-preview img.size-medium{max-width:70px;max-height:82px}
+        .logo-size-preview img.size-large{max-width:96px;max-height:112px}
         .logo-size-preview.is-white{background:#29345f}
         .logo-size-table tr:last-child th,.logo-size-table tr:last-child td{border-bottom:0}
         @media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -76,8 +77,8 @@
             <div class="tile"><img src="logoblackog.png" alt="Logótipo Magia das Cores em preto" data-application="A versão preta oferece uma alternativa para assinaturas digitais, documentos e peças gráficas em fundos escuros."><div class="label">Original a Preto</div></div>
             
             <div class="tile"><img src="logomdc.png" alt="Logótipo principal Magia das Cores" data-application="A versão principal é indicada para o website, redes sociais, cartazes, convites e outros materiais institucionais da marca."><div class="label">Logótipo principal</div></div> 
-            <div class="tile"><img src="logobalaowhite.png" alt="Logótipo principal Magia das Cores" data-application="A versão principal é indicada para o website, redes sociais, cartazes, convites e outros materiais institucionais da marca."><div class="label">Logótipo principal</div></div>
-            <div class="tile"><img src="logobalaoblack.png" alt="Logótipo principal Magia das Cores" data-application="A versão principal é indicada para o website, redes sociais, cartazes, convites e outros materiais institucionais da marca."><div class="label">Logótipo principal</div></div>
+            <div class="tile"><img src="logobalaowhite.png" alt="Logótipo principal Magia das Cores" data-application="A versão principal é indicada para o website, redes sociais, cartazes, convites e outros materiais institucionais da marca."><div class="label">Logótipo principal a Branco</div></div>
+            <div class="tile"><img src="logobalaoblack.png" alt="Logótipo principal Magia das Cores" data-application="A versão principal é indicada para o website, redes sociais, cartazes, convites e outros materiais institucionais da marca."><div class="label">Logótipo principal a Preto</div></div>
             
             <div class="tile"><img src="logoredb.png" alt="Logótipo Magia das Cores com balão vermelho" data-application="A variante com balão vermelho pode dar destaque a anúncios de festas, promoções e materiais impressos sobre fundos claros."><div class="label">Versão com balão vermelho</div></div>
             <div class="tile"><img src="logoblueb.png" alt="Logótipo Magia das Cores com balão azul" data-application="A variante com balão azul pode identificar materiais de atividades, convites e publicações com uma composição leve e festiva."><div class="label">Versão com balão azul</div></div>
@@ -88,86 +89,159 @@
             <div class="tile"><img src="logowhite.png" alt="Logótipo Magia das Cores em branco" data-application="A versão branca foi pensada para fundos escuros, como fotografias, capas de redes sociais, vídeos e sinalética."><div class="label">Versão branca</div></div>
             <div class="tile"><img src="logoblack.png" alt="Logótipo Magia das Cores em preto" data-application="A versão monocromática funciona bem em documentos, carimbos e impressões a uma só cor."><div class="label">Versão preta</div></div>
             
-            <div class="tile"><img src="logocores.png" alt="Logótipo Magia das Cores com as palavras just cores" data-application="Esta variante pode ser usada em campanhas e publicações focadas na cor, em títulos de materiais promocionais e em elementos gráficos da marca."><div class="label">Versão “Just Cores”</div></div>
-            <div class="tile"><img src="logoblue.png" alt="Logótipo Magia das Cores em azul" data-application="A versão azul oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão azul</div></div>
-            <div class="tile"><img src="logopink.png" alt="Logótipo Magia das Cores em azul" data-application="A versão azul oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão azul</div></div>
-             
+            <div class="tile"><img src="logocores.png" alt="Logótipo Magia das Cores com as palavras just cores" data-application="Esta variante pode ser usada em campanhas e publicações focadas na cor, em títulos de materiais promocionais e em elementos gráficos da marca."><div class="label">Versão texto a Cores”</div></div>
             
-        </div>
+            <div class="tile"><img src="logofullblue.png" alt="Logótipo Magia das Cores em azul" data-application="A versão azul oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão texto azul</div></div>
+            <div class="tile"><img src="logofullgreen.png" alt="Logótipo Magia das Cores em verde" data-application="A versão verde oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão texto verde</div></div>
+            <div class="tile"><img src="logofullpink.png" alt="Logótipo Magia das Cores em rosa" data-application="A versão rosa oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão texto rosa</div></div>
+            <div class="tile"><img src="logofullyellow.png" alt="Logótipo Magia das Cores em amarelo" data-application="A versão amarela oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão texto amarelo</div></div>
 
+            <div class="tile"><img src="logobalaofullblue.png" alt="Logótipo Magia das Cores em azul" data-application="A versão azul oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão balão azul</div></div>
+            <div class="tile"><img src="logobalaofullgreen.png" alt="Logótipo Magia das Cores em verde" data-application="A versão verde oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão balão verde</div></div>
+            <div class="tile"><img src="logobalaofullpink.png" alt="Logótipo Magia das Cores em rosa" data-application="A versão rosa oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão balão rosa</div></div>
+            <div class="tile"><img src="logobalaofullyellow.png" alt="Logótipo Magia das Cores em amarelo" data-application="A versão amarela oferece uma alternativa simples para assinaturas digitais, documentos e peças gráficas em fundos claros."><div class="label">Versão balão amarelo</div></div>
+
+        </div>
+<br>
         <section class="logo-sizes" aria-labelledby="logo-sizes-title">
             <h2 id="logo-sizes-title">Logótipos em diferentes tamanhos</h2>
-            <p class="logo-sizes-intro">Compara cada versão em tamanho pequeno, médio e grande.</p>
+            <p class="logo-sizes-intro">Compara todas as versões apresentadas na galeria em tamanho pequeno, médio e grande.</p>
             <div class="logo-size-table-wrap">
                 <table class="logo-size-table">
                     <thead>
                         <tr>
                             <th scope="col">Versão</th>
-                            <th scope="col">Pequeno<span class="logo-size-limit">até 34 × 40 px</span></th>
-                            <th scope="col">Médio<span class="logo-size-limit">até 52 × 60 px</span></th>
-                            <th scope="col">Grande<span class="logo-size-limit">até 70 × 80 px</span></th>
+                            <th scope="col">Pequeno<span class="logo-size-limit">até 46 × 54 px</span></th>
+                            <th scope="col">Médio<span class="logo-size-limit">até 70 × 82 px</span></th>
+                            <th scope="col">Grande<span class="logo-size-limit">até 96 × 112 px</span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">Preta</th>
-                            <td><div class="logo-size-preview"><img class="size-small" src="logoblack.png" alt="Versão preta, tamanho pequeno"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-medium" src="logoblack.png" alt="Versão preta, tamanho médio"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-large" src="logoblack.png" alt="Versão preta, tamanho grande"></div></td>
+                            <th scope="row">Original a cores</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logoog.png" alt="Logótipo original a cores, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logoog.png" alt="Logótipo original a cores, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logoog.png" alt="Logótipo original a cores, tamanho grande"></div></td>
                         </tr>
                         <tr>
-                            <th scope="row">Just Cores</th>
-                            <td><div class="logo-size-preview"><img class="size-small" src="logojustcores.png" alt="Versão Just Cores, tamanho pequeno"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-medium" src="logojustcores.png" alt="Versão Just Cores, tamanho médio"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-large" src="logojustcores.png" alt="Versão Just Cores, tamanho grande"></div></td>
+                            <th scope="row">Original a branco</th>
+                            <td><div class="logo-size-preview is-white"><img class="size-small" src="logowhiteog.png" alt="Logótipo original branco, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview is-white"><img class="size-medium" src="logowhiteog.png" alt="Logótipo original branco, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview is-white"><img class="size-large" src="logowhiteog.png" alt="Logótipo original branco, tamanho grande"></div></td>
                         </tr>
                         <tr>
-                            <th scope="row">Principal</th>
-                            <td><div class="logo-size-preview"><img class="size-small" src="logomdc.png" alt="Logótipo principal, tamanho pequeno"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-medium" src="logomdc.png" alt="Logótipo principal, tamanho médio"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-large" src="logomdc.png" alt="Logótipo principal, tamanho grande"></div></td>
+                            <th scope="row">Original a preto</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logoblackog.png" alt="Logótipo original preto, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logoblackog.png" alt="Logótipo original preto, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logoblackog.png" alt="Logótipo original preto, tamanho grande"></div></td>
                         </tr>
                         <tr>
-                            <th scope="row">Original</th>
-                            <td><div class="logo-size-preview"><img class="size-small" src="logoog.png" alt="Logótipo original, tamanho pequeno"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-medium" src="logoog.png" alt="Logótipo original, tamanho médio"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-large" src="logoog.png" alt="Logótipo original, tamanho grande"></div></td>
+                            <th scope="row">Principal a cores</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logomdc.png" alt="Logótipo principal a cores, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logomdc.png" alt="Logótipo principal a cores, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logomdc.png" alt="Logótipo principal a cores, tamanho grande"></div></td>
                         </tr>
                         <tr>
-                            <th scope="row">Vermelha</th>
-                            <td><div class="logo-size-preview"><img class="size-small" src="logored.png" alt="Versão vermelha, tamanho pequeno"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-medium" src="logored.png" alt="Versão vermelha, tamanho médio"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-large" src="logored.png" alt="Versão vermelha, tamanho grande"></div></td>
+                            <th scope="row">Principal a branco</th>
+                            <td><div class="logo-size-preview is-white"><img class="size-small" src="logobalaowhite.png" alt="Logótipo principal branco, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview is-white"><img class="size-medium" src="logobalaowhite.png" alt="Logótipo principal branco, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview is-white"><img class="size-large" src="logobalaowhite.png" alt="Logótipo principal branco, tamanho grande"></div></td>
                         </tr>
                         <tr>
-                            <th scope="row">Balão azul</th>
-                            <td><div class="logo-size-preview"><img class="size-small" src="logoblueb.png" alt="Versão com balão azul, tamanho pequeno"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-medium" src="logoblueb.png" alt="Versão com balão azul, tamanho médio"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-large" src="logoblueb.png" alt="Versão com balão azul, tamanho grande"></div></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Balão verde</th>
-                            <td><div class="logo-size-preview"><img class="size-small" src="logogreenb.png" alt="Versão com balão verde, tamanho pequeno"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-medium" src="logogreenb.png" alt="Versão com balão verde, tamanho médio"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-large" src="logogreenb.png" alt="Versão com balão verde, tamanho grande"></div></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Azul</th>
-                            <td><div class="logo-size-preview"><img class="size-small" src="logoblue.png" alt="Versão azul, tamanho pequeno"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-medium" src="logoblue.png" alt="Versão azul, tamanho médio"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-large" src="logoblue.png" alt="Versão azul, tamanho grande"></div></td>
+                            <th scope="row">Principal a preto</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logobalaoblack.png" alt="Logótipo principal preto, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logobalaoblack.png" alt="Logótipo principal preto, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logobalaoblack.png" alt="Logótipo principal preto, tamanho grande"></div></td>
                         </tr>
                         <tr>
                             <th scope="row">Balão vermelho</th>
-                            <td><div class="logo-size-preview"><img class="size-small" src="logoredb.png" alt="Versão com balão vermelho, tamanho pequeno"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-medium" src="logoredb.png" alt="Versão com balão vermelho, tamanho médio"></div></td>
-                            <td><div class="logo-size-preview"><img class="size-large" src="logoredb.png" alt="Versão com balão vermelho, tamanho grande"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logoredb.png" alt="Logótipo com balão vermelho, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logoredb.png" alt="Logótipo com balão vermelho, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logoredb.png" alt="Logótipo com balão vermelho, tamanho grande"></div></td>
                         </tr>
                         <tr>
-                            <th scope="row">Branca</th>
-                            <td><div class="logo-size-preview is-white"><img class="size-small" src="logowhite.png" alt="Versão branca, tamanho pequeno"></div></td>
-                            <td><div class="logo-size-preview is-white"><img class="size-medium" src="logowhite.png" alt="Versão branca, tamanho médio"></div></td>
-                            <td><div class="logo-size-preview is-white"><img class="size-large" src="logowhite.png" alt="Versão branca, tamanho grande"></div></td>
+                            <th scope="row">Balão azul</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logoblueb.png" alt="Logótipo com balão azul, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logoblueb.png" alt="Logótipo com balão azul, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logoblueb.png" alt="Logótipo com balão azul, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Balão rosa</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logopinkb.png" alt="Logótipo com balão rosa, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logopinkb.png" alt="Logótipo com balão rosa, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logopinkb.png" alt="Logótipo com balão rosa, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Vermelho</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logored.png" alt="Logótipo vermelho, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logored.png" alt="Logótipo vermelho, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logored.png" alt="Logótipo vermelho, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Branco</th>
+                            <td><div class="logo-size-preview is-white"><img class="size-small" src="logowhite.png" alt="Logótipo branco, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview is-white"><img class="size-medium" src="logowhite.png" alt="Logótipo branco, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview is-white"><img class="size-large" src="logowhite.png" alt="Logótipo branco, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Preto</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logoblack.png" alt="Logótipo preto, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logoblack.png" alt="Logótipo preto, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logoblack.png" alt="Logótipo preto, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Just Cores</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logocores.png" alt="Logótipo Just Cores, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logocores.png" alt="Logótipo Just Cores, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logocores.png" alt="Logótipo Just Cores, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Azul</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logofullblue.png" alt="Logótipo azul, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logofullblue.png" alt="Logótipo azul, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logofullblue.png" alt="Logótipo azul, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Verde</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logofullgreen.png" alt="Logótipo verde, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logofullgreen.png" alt="Logótipo verde, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logofullgreen.png" alt="Logótipo verde, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Rosa</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logofullpink.png" alt="Logótipo rosa, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logofullpink.png" alt="Logótipo rosa, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logofullpink.png" alt="Logótipo rosa, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Amarelo</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logofullyellow.png" alt="Logótipo amarelo, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logofullyellow.png" alt="Logótipo amarelo, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logofullyellow.png" alt="Logótipo amarelo, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Azul com balão</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logobalaofullblue.png" alt="Logótipo azul com balão, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logobalaofullblue.png" alt="Logótipo azul com balão, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logobalaofullblue.png" alt="Logótipo azul com balão, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Verde com balão</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logobalaofullgreen.png" alt="Logótipo verde com balão, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logobalaofullgreen.png" alt="Logótipo verde com balão, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logobalaofullgreen.png" alt="Logótipo verde com balão, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Rosa com balão</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logobalaofullpink.png" alt="Logótipo rosa com balão, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logobalaofullpink.png" alt="Logótipo rosa com balão, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logobalaofullpink.png" alt="Logótipo rosa com balão, tamanho grande"></div></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Amarelo com balão</th>
+                            <td><div class="logo-size-preview"><img class="size-small" src="logobalaofullyellow.png" alt="Logótipo amarelo com balão, tamanho pequeno"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-medium" src="logobalaofullyellow.png" alt="Logótipo amarelo com balão, tamanho médio"></div></td>
+                            <td><div class="logo-size-preview"><img class="size-large" src="logobalaofullyellow.png" alt="Logótipo amarelo com balão, tamanho grande"></div></td>
                         </tr>
                     </tbody>
                 </table>
