@@ -701,28 +701,15 @@ button {
     linear-gradient(120deg, #eaf9fc, #fff 72%);
 }
 
-.about-section::before,
-.about-section::after {
+.about-section::before {
   position: absolute;
   z-index: -1;
-  content: "";
-  pointer-events: none;
-}
-
-.about-section::before {
   inset: 0;
   background: url("padrao01.png") repeat;
   background-size: 190px;
   opacity: 0.07;
-}
-
-.about-section::after {
-  top: 10%;
-  right: 4%;
-  width: 100%;
-  height: 80%;
-  background: url("bola.png") left 3% bottom 8% / 76px auto no-repeat;
-  opacity: 0.17;
+  content: "";
+  pointer-events: none;
 }
 
 .about-grid {
@@ -1122,6 +1109,16 @@ button {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.social-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.instagram-button--categories {
+  background: linear-gradient(135deg, #64b6bf, #62a65f);
+}
+
 .instagram-button:hover {
   transform: scale(1.05);
   opacity: 0.9;
@@ -1264,8 +1261,8 @@ button {
 
 .closing-magu-icon {
   align-self: center;
-  width: 160px;
-  height: 160px;
+  width: 210px;
+  height: 210px;
   object-fit: contain;
 }
 
@@ -1516,8 +1513,8 @@ button {
 }
 
 .service:nth-child(2) .service-icon {
-  width: 88px;
-  height: 88px;
+  width: 108px;
+  height: 108px;
   background: #f5b934;
 }
 
@@ -1536,8 +1533,8 @@ button {
 }
 
 .service:nth-child(2) .service-icon img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 }
 
 .service:nth-child(3) .service-icon img {
@@ -1546,13 +1543,13 @@ button {
 }
 
 .service:first-child .service-icon {
-  width: 96px;
-  height: 96px;
+  width: 112px;
+  height: 112px;
 }
 
 .service:first-child .service-icon img {
-  width: 88px;
-  height: 88px;
+  width: 104px;
+  height: 104px;
 }
 
 .audience-section {
@@ -2446,13 +2443,23 @@ button {
   }
 
   .service:nth-child(2) .service-icon {
-    width: 76px;
-    height: 76px;
+    width: 92px;
+    height: 92px;
   }
 
   .service:nth-child(2) .service-icon img {
-    width: 68px;
-    height: 68px;
+    width: 84px;
+    height: 84px;
+  }
+
+  .service:first-child .service-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .service:first-child .service-icon img {
+    width: 92px;
+    height: 92px;
   }
 
   .quote-art {
@@ -2805,14 +2812,19 @@ button {
           <p>O Instagram é particularmente relevante para uma marca visual como a Magia das Cores. <br> A consistência das cores, tipografia e elementos gráficos ajuda a tornar o perfil reconhecível e único.</p>
 <br>
         <!--TA AQUI O BOTAO CRLH-->
-          <a
-  href="https://www.instagram.com/festas.magiadascores"
-  class="instagram-button"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Segue-nos no Instagram
-</a>
+          <div class="social-actions">
+            <a
+              href="https://www.instagram.com/festas.magiadascores"
+              class="instagram-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Segue-nos no Instagram
+            </a>
+            <a class="instagram-button instagram-button--categories" href="reels.html">
+              Reels
+            </a>
+          </div>
 
           <section class="instagram-preview" aria-label="Pré-visualização do perfil no Instagram">
             <div class="instagram-profile">
@@ -2899,6 +2911,7 @@ button {
         <h2 class="footer-heading">Descobre mais</h2>
         <nav class="footer-links" aria-label="Mais páginas">
           <a href="aniinfantil.html">Galeria de fotografias</a>
+          <a href="reels.html">Reels</a>
           <a href="elementos.html">Elementos gráficos</a>
           <a href="eventos.html">Eventos especiais</a>
           <a href="packbrilhante.html">Pack Brilhante</a>
